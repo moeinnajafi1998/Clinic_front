@@ -1,0 +1,8 @@
+#navbar{
+    font-size: 20px;
+    width: 95%;
+    margin: 0 auto;
+    text-align: center;
+    background: rgb(0,154,200);
+    background: linear-gradient(90deg, rgba(0,154,200,1) 9%, rgba(1,185,168,1) 81%, rgba(1,185,168,1) 83%);
+}
