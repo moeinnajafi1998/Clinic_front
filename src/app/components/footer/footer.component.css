@@ -1,0 +1,18 @@
+/* Footer section styling with background gradient */
+.footer_section {
+  background: linear-gradient(90deg, rgba(0, 154, 200, 1) 9%, rgba(1, 185, 168, 1) 81%, rgba(1, 185, 168, 1) 83%);
+  color: #fff; /* Footer text color */
+  padding: 40px 0;
+}
+
+/* Rest of the CSS code remains the same as before */
+.footer_contact {
+  margin-bottom: 20px;
+}
+
+/* ... (other CSS rules) ... */
+
+.footer-info a:hover {
+  color: #f2f2f2;
+}
+  
