@@ -25,7 +25,9 @@
           </li>
         </ul>
           
-        <button style="margin-right: auto;" [routerLink]="['/login/']" class="btn btn-info">ورود به سامانه</button>
+        <button *ngIf="!isLoggedIn" style="margin-right: auto;" [routerLink]="['/login/']" class="btn btn-info">ورود به سامانه</button>
+        <button *ngIf="isLoggedIn" style="margin-right: auto;" (click)="logOut()" class="btn btn-danger">خروج </button>
+
           <!-- <app-login style="margin-right: auto;"></app-login> -->
           <!-- <app-register *ngIf="!is_LoggedIn"></app-register> -->
 
