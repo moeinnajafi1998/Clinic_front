@@ -24,6 +24,13 @@ export class HttpService {
     return result;
   }
 
+  testToken(){
+    let headers = new HttpHeaders({"Authorization":"token " + localStorage.getItem("token")});
+    let options = {headers:headers}
+    const result = this.http.get<number>('http://127.0.0.1:8000/management/test-token',options)
+    return result;
+  }
+
 
   
 }
