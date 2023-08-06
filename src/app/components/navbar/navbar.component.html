@@ -21,9 +21,17 @@
             <a class="nav-link" [routerLink]="['/reservation/']">انبار</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" [routerLink]="['/questionandanswer/']"> گزارشات  </a>
+            <a class="nav-link" [routerLink]="['/report/']"> گزارشات  </a>
           </li>
         </ul>
+
+        <div class="dropdown">
+          <a href="#" class="dropdown-toggle" data-bs-toggle="dropdown">Dropdown</a>
+          <div class="dropdown-menu">
+              <a href="#" class="dropdown-item">Action</a>
+              <a href="#" class="dropdown-item">Another action</a>
+          </div>
+        </div>
           
         <button *ngIf="!isLoggedIn" style="margin-right: auto;" [routerLink]="['/login/']" class="btn btn-info">ورود به سامانه</button>
         <button *ngIf="isLoggedIn" style="margin-right: auto;" (click)="logOut()" class="btn btn-danger">خروج </button>

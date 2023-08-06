@@ -6,8 +6,11 @@ import { User } from '../models/User';
 export const superUserGuard: CanActivateFn = (route, state) => {
 
   const recUser = inject(RecognizationService);
-  const user = recUser.recognizedUser as User;
+  const user = recUser.user() as User;
 
-  return user.is_superuser;
+  if(user.is_superuser==true){
+    return true;
+  }
+  return false;
 
 };

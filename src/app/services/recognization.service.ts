@@ -9,10 +9,21 @@ import { catchError, throwError } from 'rxjs';
   providedIn: 'root'
 })
 export class RecognizationService {
-  
-  constructor(private http:HttpService) { }
-
   recognizedUser = {} as User;
+
+  constructor(private http:HttpService) {
+    console.log("we are in recUser Service");
+    this.http.userRecognization().pipe().subscribe(res=>{
+      this.recognizedUser = res;
+    })
+   }
+
+   ngOnInit(){
+    this.http.userRecognization().pipe().subscribe(res=>{
+      this.recognizedUser = res;
+    })
+  }
+
 
   user(){
     this.http.userRecognization().pipe().subscribe(res=>{
