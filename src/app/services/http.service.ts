@@ -3,6 +3,7 @@ import { HttpClient,HttpHeaders } from '@angular/common/http'
 import { Credential, User } from '../models/User';
 import { Token } from '../models/Token';
 import { Clinic } from '../models/Clinic';
+import { Category } from '../models/Category';
 
 @Injectable({
   providedIn: 'root'
@@ -37,6 +38,14 @@ export class HttpService {
     let headers = new HttpHeaders({"Authorization":"token " + localStorage.getItem("token")});
     let options = {headers:headers}
     const result = this.http.get<Clinic[]>('http://127.0.0.1:8000/management/clinics/',options)
+    return result;
+  }
+
+
+  categories(){
+    let headers = new HttpHeaders({"Authorization":"token " + localStorage.getItem("token")});
+    let options = {headers:headers}
+    const result = this.http.get<Category[]>('http://127.0.0.1:8000/management/categories/',options)
     return result;
   }
 
