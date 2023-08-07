@@ -36,8 +36,6 @@ export class NavbarComponent {
   }
 
   ngDoCheck(){
-    // console.log("ng do check in navbar")
-    // console.log(this.recUser.checkLogIn())
     this.isLoggedIn = this.recUser.checkLogIn();
     if(this.isLoggedIn==false){
       this.is_superUser = false;
@@ -45,7 +43,6 @@ export class NavbarComponent {
       this.user = {} as User;
     }
     else{
-      // console.log(this.user);
       this.is_superUser = this.recUser.getUserWithoutRequest().is_superuser;
       this.user_type = this.recUser.getUserWithoutRequest().user_type;
       this.user = this.recUser.getUserWithoutRequest();
