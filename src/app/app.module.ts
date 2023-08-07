@@ -12,6 +12,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { ReportComponent } from './components/report/report.component';
 import { ClinicsComponent } from './components/clinics/clinics.component';
 import { CategoriesComponent } from './components/categories/categories.component';
+import { AddClinicComponent } from './components/add-clinic/add-clinic.component';
+import { NotFoundComponent } from './components/not-found/not-found.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,9 @@ import { CategoriesComponent } from './components/categories/categories.componen
     LoginComponent,
     ReportComponent,
     ClinicsComponent,
-    CategoriesComponent
+    CategoriesComponent,
+    AddClinicComponent,
+    NotFoundComponent
   ],
   imports: [
     BrowserModule,

@@ -42,12 +42,30 @@ export class HttpService {
   }
 
 
+  createClinic(form:FormData){
+    let headers = new HttpHeaders({"Authorization":"token " + localStorage.getItem("token")});
+    let options = {headers:headers}
+    const result = this.http.post<Clinic>('http://127.0.0.1:8000/management/clinics/',form,options)
+    return result;
+  }
+  
+
   categories(){
     let headers = new HttpHeaders({"Authorization":"token " + localStorage.getItem("token")});
     let options = {headers:headers}
     const result = this.http.get<Category[]>('http://127.0.0.1:8000/management/categories/',options)
     return result;
   }
+
+
+  clinicAdmins(){
+    let headers = new HttpHeaders({"Authorization":"token " + localStorage.getItem("token")});
+    let options = {headers:headers}
+    const result = this.http.get<User[]>('http://127.0.0.1:8000/management/clinic-admins',options)
+    return result;
+  }
+
+  
 
   
 }
