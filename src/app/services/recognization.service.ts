@@ -29,6 +29,10 @@ export class RecognizationService {
     return this.recognizedUser;
   }
 
+  getUserWithoutRequest(){
+    return this.recognizedUser;
+  }
+
 
   checkLogIn(){
     return this.isLoggedIn;

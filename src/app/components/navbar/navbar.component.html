@@ -25,19 +25,21 @@
           </li>
         </ul>
 
-        <div class="dropdown">
-          <a href="#" class="dropdown-toggle" data-bs-toggle="dropdown">Dropdown</a>
+        <div *ngIf="is_superUser" class="dropdown">
+          <a class="dropdown-toggle" data-bs-toggle="dropdown">مدیر کل</a>
           <div class="dropdown-menu">
-              <a href="#" class="dropdown-item">Action</a>
-              <a href="#" class="dropdown-item">Another action</a>
+              <a [routerLink]="['/']" class="dropdown-item">درمانگاه ها</a>
+              <a [routerLink]="['/']" class="dropdown-item"> انبار ها</a>
+              <a [routerLink]="['/']" class="dropdown-item"> کاربران عادی</a>
+              <a [routerLink]="['/']" class="dropdown-item">  بیمار ها</a>
+              <a [routerLink]="['/']" class="dropdown-item">   پرستار ها</a>
+              <a [routerLink]="['/']" class="dropdown-item">   دسته بندی ها</a>
+              <a [routerLink]="['/']" class="dropdown-item">  تجهیزات</a>
           </div>
         </div>
           
         <button *ngIf="!isLoggedIn" style="margin-right: auto;" [routerLink]="['/login/']" class="btn btn-info">ورود به سامانه</button>
         <button *ngIf="isLoggedIn" style="margin-right: auto;" (click)="logOut()" class="btn btn-danger">خروج </button>
-
-          <!-- <app-login style="margin-right: auto;"></app-login> -->
-          <!-- <app-register *ngIf="!is_LoggedIn"></app-register> -->
 
         </div>
     </div>
