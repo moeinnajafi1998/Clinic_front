@@ -6,12 +6,15 @@ import { ReportComponent } from './components/report/report.component';
 import { superUserGuard } from './guards/super-user.guard';
 import { ClinicsComponent } from './components/clinics/clinics.component';
 import { clinicAdminGuard } from './guards/clinic-admin.guard';
+import { CategoriesComponent } from './components/categories/categories.component';
 
 const routes: Routes = [
   {path:'',component:HomeComponent},
   {path:'login',component:LoginComponent},
   {path:'report',component:ReportComponent,canActivate:[superUserGuard]},
   {path:'clinics',component:ClinicsComponent,canActivate:[superUserGuard]},
+  {path:'categories',component:CategoriesComponent,canActivate:[superUserGuard]},
+
 
 
 
