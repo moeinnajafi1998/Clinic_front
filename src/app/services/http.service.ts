@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient,HttpHeaders } from '@angular/common/http'
 import { Credential, User } from '../models/User';
 import { Token } from '../models/Token';
+import { Clinic } from '../models/Clinic';
 
 @Injectable({
   providedIn: 'root'
@@ -31,6 +32,13 @@ export class HttpService {
     return result;
   }
 
+
+  clinics(){
+    let headers = new HttpHeaders({"Authorization":"token " + localStorage.getItem("token")});
+    let options = {headers:headers}
+    const result = this.http.get<Clinic[]>('http://127.0.0.1:8000/management/clinics/',options)
+    return result;
+  }
 
   
 }

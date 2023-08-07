@@ -9,7 +9,7 @@ export const typicalUserGuard: CanActivateFn = (route, state) => {
   if(recUser.user().user_type=="Typical_User"){
     return true;
   }
-  alert("ابتدا وارد شوید");
+  alert("ابتدا به عنوان کاربر عادی وارد شوید");
   return false;
 
 };

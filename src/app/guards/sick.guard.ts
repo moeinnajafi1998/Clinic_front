@@ -9,7 +9,7 @@ export const sickGuard: CanActivateFn = (route, state) => {
   if(recUser.user().user_type=="Sick"){
     return true;
   }
-  alert("ابتدا وارد شوید");
+  alert("ابتدا به عنوان بیمار وارد شوید");
   return false;
 
 };
