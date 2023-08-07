@@ -10,29 +10,25 @@ import { catchError, throwError } from 'rxjs';
 })
 export class RecognizationService {
   recognizedUser = {} as User;
+  private isLoggedIn : boolean = false;
 
   constructor(private http:HttpService) {
-    console.log("we are in recUser Service");
-    this.http.userRecognization().pipe().subscribe(res=>{
-      this.recognizedUser = res;
-    })
-   }
-
-   ngOnInit(){
+    console.log("we are in recUser ngOnInit Service");
     this.http.userRecognization().pipe().subscribe(res=>{
       this.recognizedUser = res;
     })
   }
 
 
+
   user(){
+    console.log("we are in recUser Service => checkLogIn Method");
     this.http.userRecognization().pipe().subscribe(res=>{
       this.recognizedUser = res;
     })
     return this.recognizedUser;
   }
 
-  private isLoggedIn : boolean = false;
 
   checkLogIn(){
     return this.isLoggedIn;
@@ -43,6 +39,7 @@ export class RecognizationService {
   }
 
   logOut(){
+    this.recognizedUser = {} as User;
     this.isLoggedIn = false;
     localStorage.clear();
   }
@@ -69,6 +66,7 @@ export class RecognizationService {
       }
     })
     this.isLoggedIn = false;
+    console.log("test token => " +  this.isLoggedIn);
   }
 
 
