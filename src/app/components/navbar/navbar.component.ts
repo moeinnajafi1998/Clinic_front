@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { RecognizationService } from 'src/app/services/recognization.service';
 
 @Component({
@@ -9,20 +10,20 @@ import { RecognizationService } from 'src/app/services/recognization.service';
 export class NavbarComponent {
 
   isLoggedIn : boolean = false;
-  constructor(private recUser:RecognizationService){}
-
-  ngOnInit(){
+  constructor(private recUser:RecognizationService,private router:Router ){
     this.isLoggedIn = this.recUser.checkLogIn();
-    this.recUser.checkUser();
+    this.recUser.checkUser(); 
   }
 
+  ngOnInit(){}
 
   logOut(){
     this.recUser.logOut();
+    this.router.navigate(['/']);
   }
 
   ngDoCheck(){
-    console.log("do check")
+    console.log("ng do check in navbar")
     console.log(this.recUser.checkLogIn())
     this.isLoggedIn = this.recUser.checkLogIn();
   }

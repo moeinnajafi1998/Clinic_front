@@ -21,7 +21,6 @@ export class LoginComponent {
 
   private handleError(error:HttpErrorResponse){
     localStorage.clear();
-    // this.recogUser.logOut();
     Swal.fire({
       title: 'خطا!',
       text: error.message,
@@ -44,6 +43,7 @@ export class LoginComponent {
       ).subscribe((res)=>{
       localStorage.setItem('token',res.token);
       this.recogUser.setLogIn();
+      this.recogUser.user();
       this.router.navigate(['/'])
     })
   }

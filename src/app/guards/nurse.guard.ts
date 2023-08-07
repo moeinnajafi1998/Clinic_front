@@ -6,12 +6,9 @@ import { User } from '../models/User';
 export const nurseGuard: CanActivateFn = (route, state) => {
 
   const recUser = inject(RecognizationService);
-  const user = recUser.recognizedUser as User;
-
-  if(user.user_type=="Nurse"){
+  if(recUser.user().user_type=="Nurse"){
     return true;
   }
-
+  alert("ابتدا وارد شوید");
   return false;
-
 };

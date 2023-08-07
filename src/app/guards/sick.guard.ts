@@ -5,16 +5,11 @@ import { User } from '../models/User';
 
 export const sickGuard: CanActivateFn = (route, state) => {
 
-  
   const recUser = inject(RecognizationService);
-  const user = recUser.recognizedUser as User;
-
-  if(user.user_type=="Sick"){
+  if(recUser.user().user_type=="Sick"){
     return true;
   }
-
+  alert("ابتدا وارد شوید");
   return false;
-
-
 
 };

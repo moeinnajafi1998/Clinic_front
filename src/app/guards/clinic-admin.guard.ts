@@ -6,11 +6,10 @@ import { User } from '../models/User';
 
 export const clinicAdminGuard: CanActivateFn = (route, state) => {
   const recUser = inject(RecognizationService);
-  const user = recUser.recognizedUser as User;
 
-  if(user.user_type=="Clinic_Admin"){
+  if(recUser.user().user_type=="Clinic_Admin"){
     return true;
   }
-
+  alert("ابتدا وارد شوید");
   return false;
 };
