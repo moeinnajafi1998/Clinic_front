@@ -9,6 +9,6 @@ export const nurseGuard: CanActivateFn = (route, state) => {
   if(recUser.user().user_type=="Nurse"){
     return true;
   }
-  alert("ابتدا وارد شوید");
+  alert("ابتدا به عنوان پرستار وارد شوید");
   return false;
 };

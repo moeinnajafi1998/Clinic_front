@@ -10,6 +10,6 @@ export const clinicAdminGuard: CanActivateFn = (route, state) => {
   if(recUser.user().user_type=="Clinic_Admin"){
     return true;
   }
-  alert("ابتدا وارد شوید");
+  alert("ابتدا به عنوان مدیر درمانگاه وارد شوید");
   return false;
 };

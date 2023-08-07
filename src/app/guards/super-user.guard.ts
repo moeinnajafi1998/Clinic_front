@@ -11,7 +11,7 @@ export const superUserGuard: CanActivateFn = (route, state) => {
     console.log("superuser guard => is_superuser = " + recUser.checkLogIn());
     return true;
   }
-  alert("ابتدا وارد شوید");
+  alert("ابتدا به عنوان مدیر کل وارد شوید");
   return false;
 
 };

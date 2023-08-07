@@ -10,6 +10,7 @@ import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
 import { HttpClientModule } from '@angular/common/http';
 import { ReportComponent } from './components/report/report.component';
+import { ClinicsComponent } from './components/clinics/clinics.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { ReportComponent } from './components/report/report.component';
     Section1Component,
     HomeComponent,
     LoginComponent,
-    ReportComponent
+    ReportComponent,
+    ClinicsComponent
   ],
   imports: [
     BrowserModule,
