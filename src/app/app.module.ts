@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+// import { NgbPaginationModule, NgbAlertModule } from '@ng-bootstrap/ng-bootstrap';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -14,6 +15,12 @@ import { ClinicsComponent } from './components/clinics/clinics.component';
 import { CategoriesComponent } from './components/categories/categories.component';
 import { AddClinicComponent } from './components/add-clinic/add-clinic.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
+import { UsersComponent } from './components/users/users.component';
+import { ClinicAdminsComponent } from './components/clinic-admins/clinic-admins.component';
+import { PermissionsComponent } from './components/permissions/permissions/permissions.component';
+import { UpdatePermissionComponent } from './components/permissions/update-permission/update-permission.component';
+import { CreatePermissionComponent } from './components/permissions/create-permission/create-permission.component';
+import { TypicalUsersComponent } from './components/typical-users/typical-users.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +34,13 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
     ClinicsComponent,
     CategoriesComponent,
     AddClinicComponent,
-    NotFoundComponent
+    NotFoundComponent,
+    UsersComponent,
+    ClinicAdminsComponent,
+    PermissionsComponent,
+    UpdatePermissionComponent,
+    CreatePermissionComponent,
+    TypicalUsersComponent
   ],
   imports: [
     BrowserModule,

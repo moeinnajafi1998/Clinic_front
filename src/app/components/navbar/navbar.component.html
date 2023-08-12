@@ -29,12 +29,19 @@
           <a class="dropdown-toggle" data-bs-toggle="dropdown">مدیر کل</a>
           <div class="dropdown-menu">
               <a [routerLink]="['/clinics/']" class="dropdown-item">درمانگاه ها</a>
-              <a [routerLink]="['/']" class="dropdown-item"> انبار ها</a>
-              <a [routerLink]="['/']" class="dropdown-item"> کاربران عادی</a>
-              <a [routerLink]="['/']" class="dropdown-item">  بیمار ها</a>
-              <a [routerLink]="['/']" class="dropdown-item">   پرستار ها</a>
+              <a [routerLink]="['/users/']" class="dropdown-item"> کاربران</a>
+              <a [routerLink]="['/clinic-admins/']" class="dropdown-item"> مدیران درمانگاه ها</a>
+              <a [routerLink]="['/typical-users/']" class="dropdown-item"> منشی ها</a>
+
+              <a [routerLink]="['/permissions/']" class="dropdown-item"> دسترسی ها</a>
+
+
+              <!-- <a [routerLink]="['/']" class="dropdown-item"> انبار ها</a> -->
+              <!-- <a [routerLink]="['/']" class="dropdown-item"> کاربران عادی</a> -->
+              <!-- <a [routerLink]="['/']" class="dropdown-item">  بیمار ها</a> -->
+              <!-- <a [routerLink]="['/']" class="dropdown-item">   پرستار ها</a> -->
               <a [routerLink]="['/categories/']" class="dropdown-item">   دسته بندی ها</a>
-              <a [routerLink]="['/']" class="dropdown-item">  تجهیزات</a>
+              <!-- <a [routerLink]="['/']" class="dropdown-item">  تجهیزات</a> -->
               <a [routerLink]="['/add-clinic/']" class="dropdown-item">  درمانگاه جدید</a>
           </div>
         </div>
