@@ -21,6 +21,7 @@ import { PermissionsComponent } from './components/permissions/permissions/permi
 import { UpdatePermissionComponent } from './components/permissions/update-permission/update-permission.component';
 import { CreatePermissionComponent } from './components/permissions/create-permission/create-permission.component';
 import { TypicalUsersComponent } from './components/typical-users/typical-users.component';
+import { NursesComponent } from './components/nurses/nurses.component';
 
 @NgModule({
   declarations: [
@@ -40,7 +41,8 @@ import { TypicalUsersComponent } from './components/typical-users/typical-users.
     PermissionsComponent,
     UpdatePermissionComponent,
     CreatePermissionComponent,
-    TypicalUsersComponent
+    TypicalUsersComponent,
+    NursesComponent
   ],
   imports: [
     BrowserModule,

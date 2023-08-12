@@ -70,7 +70,15 @@ export class HttpService {
   typicalUsers(){
     let headers = new HttpHeaders({"Authorization":"token " + localStorage.getItem("token")});
     let options = {headers:headers}
-    const result = this.http.get<User[]>('http://127.0.0.1:8000/management/typical-user/',options)
+    const result = this.http.get<User[]>('http://127.0.0.1:8000/management/typical-users/',options)
+    return result;
+  }
+
+
+  nurses(){
+    let headers = new HttpHeaders({"Authorization":"token " + localStorage.getItem("token")});
+    let options = {headers:headers}
+    const result = this.http.get<User[]>('http://127.0.0.1:8000/management/nurse-list/',options)
     return result;
   }
 
