@@ -1,0 +1,46 @@
+<div style="margin: 50px;" class="container-fluid">
+	<div class="row">
+		<div class="col-md-12">
+            <table class="table">
+				<thead>
+					<tr>
+						<th>
+							#
+						</th>
+						<th>
+							name
+						</th>
+						<th>
+							codename
+						</th>
+						<th>
+							content_type
+						</th>
+                        <th>
+							حذف
+						</th>
+					</tr>
+				</thead>
+				<tbody >
+					<tr *ngFor="let p of permissions">
+						<td>
+							{{ p.id }}
+						</td>
+						<td>
+							{{ p.name }}
+						</td>
+						<td>
+							{{ p.codename }}
+						</td>
+						<td>
+							{{ p.content_type }}
+						</td>
+                        <td>
+							<button (click)="DeletePermissionComponent($event, p.id)" class="btn btn-danger" >حذف</button>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>

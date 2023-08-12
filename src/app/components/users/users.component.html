@@ -1,0 +1,21 @@
+<div class="main">
+    <div class="container">
+        <div class="row justify-content-center">
+            <div *ngFor="let u of users" class="col-md-6">
+                <div class="user-card">
+                    <div class="text-center">
+                        <img src="{{ u.image }}" alt="{{ u.username }}" class="user-image">
+                        <h3 class="mt-3">Username: {{ u.username }}</h3>
+                        <p *ngIf="u.user_type != null">User Type: {{ u.user_type }}</p>
+                        <button *ngIf="u.is_superuser" class="btn btn-success btn-sm">superuser</button>
+                    </div>
+                        <hr>
+                        <h5 class="text-center">User Permissions</h5>
+                        <ul>
+                            <li *ngFor="let p of u.user_permissions">Permission Name: {{ p.codename }}</li>
+                        </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

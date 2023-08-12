@@ -4,6 +4,7 @@ import { Credential, User } from '../models/User';
 import { Token } from '../models/Token';
 import { Clinic } from '../models/Clinic';
 import { Category } from '../models/Category';
+import { PermissionFull } from '../models/Permission';
 
 @Injectable({
   providedIn: 'root'
@@ -61,11 +62,41 @@ export class HttpService {
   clinicAdmins(){
     let headers = new HttpHeaders({"Authorization":"token " + localStorage.getItem("token")});
     let options = {headers:headers}
-    const result = this.http.get<User[]>('http://127.0.0.1:8000/management/clinic-admins',options)
+    const result = this.http.get<User[]>('http://127.0.0.1:8000/management/clinic-admins/',options)
+    return result;
+  }
+
+
+  typicalUsers(){
+    let headers = new HttpHeaders({"Authorization":"token " + localStorage.getItem("token")});
+    let options = {headers:headers}
+    const result = this.http.get<User[]>('http://127.0.0.1:8000/management/typical-user/',options)
     return result;
   }
 
   
+  users(){
+    let headers = new HttpHeaders({"Authorization":"token " + localStorage.getItem("token")});
+    let options = {headers:headers}
+    const result = this.http.get<User[]>('http://127.0.0.1:8000/management/users/',options)
+    return result;
+  }
+
+
+  permissions(){
+    let headers = new HttpHeaders({"Authorization":"token " + localStorage.getItem("token")});
+    let options = {headers:headers}
+    const result = this.http.get<PermissionFull[]>('http://127.0.0.1:8000/management/list-permissions/',options)
+    return result;
+  }
+  
+
+  deletePermission(id:number){
+    let headers = new HttpHeaders({"Authorization":"token " + localStorage.getItem("token")});
+    let options = {headers:headers}
+    const result = this.http.delete(`http://127.0.0.1:8000/management/delete-permission/${id}/`,options)
+    return result;
+  }
 
   
 }
