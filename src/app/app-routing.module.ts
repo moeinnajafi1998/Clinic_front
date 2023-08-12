@@ -15,6 +15,7 @@ import { PermissionsComponent } from './components/permissions/permissions/permi
 import { TypicalUsersComponent } from './components/typical-users/typical-users.component';
 import { NursesComponent } from './components/nurses/nurses.component';
 import { SicksComponent } from './components/sicks/sicks.component';
+import { WarehouseKeepersComponent } from './components/warehouse-keepers/warehouse-keepers.component';
 
 const routes: Routes = [
   {path:'',component:HomeComponent},
@@ -28,6 +29,8 @@ const routes: Routes = [
   {path:'sicks',component:SicksComponent,canActivate:[superUserGuard]},
   {path:'clinic-admins',component:ClinicAdminsComponent,canActivate:[superUserGuard]},
   {path:'typical-users',component:TypicalUsersComponent,canActivate:[superUserGuard]},
+  {path:'warehouse-keepers',component:WarehouseKeepersComponent,canActivate:[superUserGuard]},
+
 
 
   {path:'permissions',component:PermissionsComponent,canActivate:[superUserGuard]},

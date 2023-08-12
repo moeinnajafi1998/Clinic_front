@@ -23,6 +23,7 @@ import { CreatePermissionComponent } from './components/permissions/create-permi
 import { TypicalUsersComponent } from './components/typical-users/typical-users.component';
 import { NursesComponent } from './components/nurses/nurses.component';
 import { SicksComponent } from './components/sicks/sicks.component';
+import { WarehouseKeepersComponent } from './components/warehouse-keepers/warehouse-keepers.component';
 
 @NgModule({
   declarations: [
@@ -44,7 +45,8 @@ import { SicksComponent } from './components/sicks/sicks.component';
     CreatePermissionComponent,
     TypicalUsersComponent,
     NursesComponent,
-    SicksComponent
+    SicksComponent,
+    WarehouseKeepersComponent
   ],
   imports: [
     BrowserModule,
