@@ -98,6 +98,14 @@ export class HttpService {
     return result;
   }
 
+
+  financialManagers(){
+    let headers = new HttpHeaders({"Authorization":"token " + localStorage.getItem("token")});
+    let options = {headers:headers}
+    const result = this.http.get<User[]>('http://127.0.0.1:8000/management/financial-managers/',options)
+    return result;
+  }
+
   
   users(){
     let headers = new HttpHeaders({"Authorization":"token " + localStorage.getItem("token")});
