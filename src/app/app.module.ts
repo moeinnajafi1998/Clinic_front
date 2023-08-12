@@ -22,6 +22,7 @@ import { UpdatePermissionComponent } from './components/permissions/update-permi
 import { CreatePermissionComponent } from './components/permissions/create-permission/create-permission.component';
 import { TypicalUsersComponent } from './components/typical-users/typical-users.component';
 import { NursesComponent } from './components/nurses/nurses.component';
+import { SicksComponent } from './components/sicks/sicks.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +43,8 @@ import { NursesComponent } from './components/nurses/nurses.component';
     UpdatePermissionComponent,
     CreatePermissionComponent,
     TypicalUsersComponent,
-    NursesComponent
+    NursesComponent,
+    SicksComponent
   ],
   imports: [
     BrowserModule,

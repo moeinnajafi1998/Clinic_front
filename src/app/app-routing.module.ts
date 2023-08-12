@@ -14,6 +14,7 @@ import { ClinicAdminsComponent } from './components/clinic-admins/clinic-admins.
 import { PermissionsComponent } from './components/permissions/permissions/permissions.component';
 import { TypicalUsersComponent } from './components/typical-users/typical-users.component';
 import { NursesComponent } from './components/nurses/nurses.component';
+import { SicksComponent } from './components/sicks/sicks.component';
 
 const routes: Routes = [
   {path:'',component:HomeComponent},
@@ -24,6 +25,7 @@ const routes: Routes = [
   {path:'add-clinic',component:AddClinicComponent,canActivate:[superUserGuard]},
   {path:'users',component:UsersComponent,canActivate:[superUserGuard]},
   {path:'nurses',component:NursesComponent,canActivate:[superUserGuard]},
+  {path:'sicks',component:SicksComponent,canActivate:[superUserGuard]},
   {path:'clinic-admins',component:ClinicAdminsComponent,canActivate:[superUserGuard]},
   {path:'typical-users',component:TypicalUsersComponent,canActivate:[superUserGuard]},
 
