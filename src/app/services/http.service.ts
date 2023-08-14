@@ -13,6 +13,55 @@ export class HttpService {
 
   constructor(private http:HttpClient) { }
 
+  // Clinic APIs
+  clinics(){
+    let headers = new HttpHeaders({"Authorization":"token " + localStorage.getItem("token")});
+    let options = {headers:headers}
+    const result = this.http.get<Clinic[]>('http://127.0.0.1:8000/management/clinics/',options)
+    return result;
+  }
+
+  createClinic(form:FormData){
+    let headers = new HttpHeaders({"Authorization":"token " + localStorage.getItem("token")});
+    let options = {headers:headers}
+    const result = this.http.post<Clinic>('http://127.0.0.1:8000/management/clinic-create/',form,options)
+    return result;
+  }
+
+  retrieveClinic(id:number){
+    let headers = new HttpHeaders({"Authorization":"token " + localStorage.getItem("token")});
+    let options = {headers:headers}
+    const result = this.http.get<Clinic>(`http://127.0.0.1:8000/management/clinic-retrieve/${id}/`,options)
+    return result;
+  }
+
+  updateClinic(form:FormData,id:number){
+    let headers = new HttpHeaders({"Authorization":"token " + localStorage.getItem("token")});
+    let options = {headers:headers}
+    const result = this.http.patch<Clinic>(`http://127.0.0.1:8000/management/clinic-update/${id}/`,form,options)
+    return result;
+  }
+
+  deleteClinic(id:number){
+    let headers = new HttpHeaders({"Authorization":"token " + localStorage.getItem("token")});
+    let options = {headers:headers}
+    const result = this.http.delete(`http://127.0.0.1:8000/management/clinic-delete/${id}/`,options)
+    return result;
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   userRecognization(){
     let headers = new HttpHeaders({"Authorization":"token " + localStorage.getItem("token")});
@@ -34,22 +83,6 @@ export class HttpService {
     return result;
   }
 
-
-  clinics(){
-    let headers = new HttpHeaders({"Authorization":"token " + localStorage.getItem("token")});
-    let options = {headers:headers}
-    const result = this.http.get<Clinic[]>('http://127.0.0.1:8000/management/clinics/',options)
-    return result;
-  }
-
-
-  createClinic(form:FormData){
-    let headers = new HttpHeaders({"Authorization":"token " + localStorage.getItem("token")});
-    let options = {headers:headers}
-    const result = this.http.post<Clinic>('http://127.0.0.1:8000/management/clinics/',form,options)
-    return result;
-  }
-  
 
   categories(){
     let headers = new HttpHeaders({"Authorization":"token " + localStorage.getItem("token")});

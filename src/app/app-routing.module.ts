@@ -18,14 +18,31 @@ import { SicksComponent } from './components/sicks/sicks.component';
 import { WarehouseKeepersComponent } from './components/warehouse-keepers/warehouse-keepers.component';
 import { FinancialManagersComponent } from './components/financial-managers/financial-managers.component';
 import { AddUserComponent } from './components/add-user/add-user.component';
+import { ClinicDetailsComponent } from './components/clinic-details/clinic-details.component';
 
 const routes: Routes = [
   {path:'',component:HomeComponent},
   {path:'login',component:LoginComponent},
-  {path:'report',component:ReportComponent,canActivate:[superUserGuard]},
+  // Clinic routes
   {path:'clinics',component:ClinicsComponent,canActivate:[superUserGuard]},
-  {path:'categories',component:CategoriesComponent,canActivate:[superUserGuard]},
   {path:'add-clinic',component:AddClinicComponent,canActivate:[superUserGuard]},
+  {path:'clinic/:id',component:ClinicDetailsComponent,canActivate:[superUserGuard]},
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  {path:'report',component:ReportComponent,canActivate:[superUserGuard]},
+  {path:'categories',component:CategoriesComponent,canActivate:[superUserGuard]},
 
   {path:'users',component:UsersComponent,canActivate:[superUserGuard]},
   {path:'nurses',component:NursesComponent,canActivate:[superUserGuard]},

@@ -1,0 +1,26 @@
+<main dir="rtl">
+    <div class="form-container">
+        <h4>ویرایش درمانگاه </h4>
+      <form>
+        <div class="form-group">
+          <label for="name">نام درمانگاه:</label>
+          <input type="text" id="name" name="name" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="address">آدرس:</label>
+          <input type="text" id="address" name="address">
+        </div>
+        
+        <div class="form-group">
+          <label for="manager">مدیر:</label>
+          <select id="manager" name="manager" required>
+            <option *ngFor="let ca of clinicAdmins" value="{{ca.username}}"> {{ ca.username }}</option>
+          </select>
+        </div>
+        
+        <button class="btn btn-lg btn-success" (click)="editClinic($event)" type="submit">ویرایش</button>
+        <button class="btn btn-sm btn-danger" (click)="deleteClinic($event)" type="submit">حذف درمانگاه</button>
+      </form>
+    </div>
+</main>

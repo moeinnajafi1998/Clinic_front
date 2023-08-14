@@ -10,20 +10,21 @@
       </div>
       <div class="row">
         <div *ngFor="let c of clinics" class="col-md-3">
-          <div class="box ">
+          <div class="box">
             <div class="img-box">
               <img src="../../../assets/images/s1.png" alt="">
             </div>
             <div class="detail-box">
-              <h5>
+              <h6>
                 {{ c.name }}
-              </h5>
+              </h6>
               <p>
-                {{ c.address }}
+                آدرس: {{ c.address }}
               </p>
               <p>
-                {{ c.manager }}
+                مدیریت: {{ c.manager }}
               </p>
+              <button (click)="clinicDetails(c.id)" class="btn btn-sm btn-success">جزئیات</button>
             </div>
           </div>
         </div>
