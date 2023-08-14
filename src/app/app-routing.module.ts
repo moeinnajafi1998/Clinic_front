@@ -19,6 +19,8 @@ import { WarehouseKeepersComponent } from './components/warehouse-keepers/wareho
 import { FinancialManagersComponent } from './components/financial-managers/financial-managers.component';
 import { AddUserComponent } from './components/add-user/add-user.component';
 import { ClinicDetailsComponent } from './components/clinic-details/clinic-details.component';
+import { AddCategoryComponent } from './components/add-category/add-category.component';
+import { CategoryDetailsComponent } from './components/category-details/category-details.component';
 
 const routes: Routes = [
   {path:'',component:HomeComponent},
@@ -27,23 +29,15 @@ const routes: Routes = [
   {path:'clinics',component:ClinicsComponent,canActivate:[superUserGuard]},
   {path:'add-clinic',component:AddClinicComponent,canActivate:[superUserGuard]},
   {path:'clinic/:id',component:ClinicDetailsComponent,canActivate:[superUserGuard]},
-
-
-
-
-
-
-
-
-
-
+  // Category routes
+  {path:'categories',component:CategoriesComponent,canActivate:[superUserGuard]},
+  {path:'add-category',component:AddCategoryComponent,canActivate:[superUserGuard]},
+  {path:'category/:id',component:CategoryDetailsComponent,canActivate:[superUserGuard]},
 
 
 
 
   {path:'report',component:ReportComponent,canActivate:[superUserGuard]},
-  {path:'categories',component:CategoriesComponent,canActivate:[superUserGuard]},
-
   {path:'users',component:UsersComponent,canActivate:[superUserGuard]},
   {path:'nurses',component:NursesComponent,canActivate:[superUserGuard]},
   {path:'sicks',component:SicksComponent,canActivate:[superUserGuard]},
@@ -51,16 +45,8 @@ const routes: Routes = [
   {path:'typical-users',component:TypicalUsersComponent,canActivate:[superUserGuard]},
   {path:'warehouse-keepers',component:WarehouseKeepersComponent,canActivate:[superUserGuard]},
   {path:'financial-managers',component:FinancialManagersComponent,canActivate:[superUserGuard]},
-
   {path:'add-user',component:AddUserComponent,canActivate:[superUserGuard]},
-
-
-
   {path:'permissions',component:PermissionsComponent,canActivate:[superUserGuard]},
-
-
-
-
 
 
   {path:'not-found',component:NotFoundComponent},

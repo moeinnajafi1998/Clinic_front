@@ -48,7 +48,13 @@ export class HttpService {
     const result = this.http.delete(`http://127.0.0.1:8000/management/clinic-delete/${id}/`,options)
     return result;
   }
-
+  // Category APIs
+  categories(){
+    let headers = new HttpHeaders({"Authorization":"token " + localStorage.getItem("token")});
+    let options = {headers:headers}
+    const result = this.http.get<Category[]>('http://127.0.0.1:8000/management/categories/',options)
+    return result;
+  }
 
 
 
@@ -84,12 +90,7 @@ export class HttpService {
   }
 
 
-  categories(){
-    let headers = new HttpHeaders({"Authorization":"token " + localStorage.getItem("token")});
-    let options = {headers:headers}
-    const result = this.http.get<Category[]>('http://127.0.0.1:8000/management/categories/',options)
-    return result;
-  }
+
 
 
   clinicAdmins(){

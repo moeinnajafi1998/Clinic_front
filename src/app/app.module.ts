@@ -27,6 +27,12 @@ import { WarehouseKeepersComponent } from './components/warehouse-keepers/wareho
 import { FinancialManagersComponent } from './components/financial-managers/financial-managers.component';
 import { AddUserComponent } from './components/add-user/add-user.component';
 import { ClinicDetailsComponent } from './components/clinic-details/clinic-details.component';
+import { AddCategoryComponent } from './components/add-category/add-category.component';
+import { CategoryDetailsComponent } from './components/category-details/category-details.component';
+import { AddItemComponent } from './components/add-item/add-item.component';
+import { AddPermissionComponent } from './components/add-permission/add-permission.component';
+import { ItemDetailsComponent } from './components/item-details/item-details.component';
+import { PermissionDetailsComponent } from './components/permission-details/permission-details.component';
 
 @NgModule({
   declarations: [
@@ -52,7 +58,13 @@ import { ClinicDetailsComponent } from './components/clinic-details/clinic-detai
     WarehouseKeepersComponent,
     FinancialManagersComponent,
     AddUserComponent,
-    ClinicDetailsComponent
+    ClinicDetailsComponent,
+    AddCategoryComponent,
+    CategoryDetailsComponent,
+    AddItemComponent,
+    AddPermissionComponent,
+    ItemDetailsComponent,
+    PermissionDetailsComponent
   ],
   imports: [
     BrowserModule,
