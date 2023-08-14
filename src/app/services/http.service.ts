@@ -138,5 +138,14 @@ export class HttpService {
     return result;
   }
 
+
+
+  deleteUser(id:number){
+    let headers = new HttpHeaders({"Authorization":"token " + localStorage.getItem("token")});
+    let options = {headers:headers}
+    const result = this.http.delete(`http://127.0.0.1:8000/management/delete-user/${id}/`,options)
+    return result;
+  }
+
   
 }

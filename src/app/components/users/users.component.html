@@ -14,6 +14,7 @@
                         <ul>
                             <li *ngFor="let p of u.user_permissions">Permission Name: {{ p.codename }}</li>
                         </ul>
+                        <button (click)="deleteUser($event,u.id)" class="btn btn-danger">حذف</button>
                 </div>
             </div>
         </div>
