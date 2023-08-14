@@ -26,7 +26,7 @@
         </ul>
 
         <div *ngIf="is_superUser"  class="dropdown">
-          <a class="dropdown-toggle" data-bs-toggle="dropdown">مدیر کل</a>
+          <a class="dropdown-toggle" data-bs-toggle="dropdown">مدیریت کل</a>
           <div class="dropdown-menu" >
             <a [routerLink]="['/clinics/']" class="dropdown-item">درمانگاه ها</a>
             <a [routerLink]="['/add-clinic/']" class="dropdown-item">درمانگاه جدید</a>
@@ -38,9 +38,15 @@
             <a [routerLink]="['/add-item/']" class="dropdown-item">آیتم جدید</a>
             <hr/>
 
+          </div>
+        </div>
 
 
 
+
+        <div *ngIf="is_superUser"  class="dropdown">
+          <a class="dropdown-toggle" data-bs-toggle="dropdown">کاربران</a>
+          <div class="dropdown-menu" >
             <a [routerLink]="['/users/']" class="dropdown-item"> کاربران</a>
             <a [routerLink]="['/clinic-admins/']" class="dropdown-item"> مدیران درمانگاه ها</a>
             <a [routerLink]="['/typical-users/']" class="dropdown-item"> منشی ها</a>
@@ -53,7 +59,6 @@
             <!-- <a [routerLink]="['/']" class="dropdown-item"> کاربران عادی</a> -->
             <!-- <a [routerLink]="['/']" class="dropdown-item">  بیمار ها</a> -->
             <!-- <a [routerLink]="['/']" class="dropdown-item">   پرستار ها</a> -->
-            <a [routerLink]="['/categories/']" class="dropdown-item">   دسته بندی ها</a>
             <!-- <a [routerLink]="['/']" class="dropdown-item">  تجهیزات</a> -->
             <a [routerLink]="['/add-user/']" class="dropdown-item">  کاربر جدید</a>
           </div>
