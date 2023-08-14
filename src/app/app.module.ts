@@ -26,6 +26,7 @@ import { SicksComponent } from './components/sicks/sicks.component';
 import { WarehouseKeepersComponent } from './components/warehouse-keepers/warehouse-keepers.component';
 import { FinancialManagersComponent } from './components/financial-managers/financial-managers.component';
 import { AddUserComponent } from './components/add-user/add-user.component';
+import { ClinicDetailsComponent } from './components/clinic-details/clinic-details.component';
 
 @NgModule({
   declarations: [
@@ -50,7 +51,8 @@ import { AddUserComponent } from './components/add-user/add-user.component';
     SicksComponent,
     WarehouseKeepersComponent,
     FinancialManagersComponent,
-    AddUserComponent
+    AddUserComponent,
+    ClinicDetailsComponent
   ],
   imports: [
     BrowserModule,

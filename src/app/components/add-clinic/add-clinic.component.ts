@@ -30,7 +30,6 @@ export class AddClinicComponent {
 
     this.http.createClinic(this.formData).pipe().subscribe(
       res=>{
-        alert(JSON.stringify(res));
         this.router.navigate(['/clinics/']);
       }
     )
