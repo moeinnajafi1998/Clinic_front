@@ -1,1 +1,36 @@
-<p>add-item works!</p>
+<main dir="rtl">
+    <div class="form-container">
+      <form>
+        <div class="form-group">
+          <label for="name">نام آیتم:</label>
+          <input type="text" id="name" name="name" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="number">تعداد:</label>
+          <input type="text" id="number" name="number">
+        </div>
+        
+        <div class="form-group">
+          <label for="category">دسته بندی:</label>
+          <select id="category" name="category" required>
+            <option *ngFor="let c of categories" value="{{c.name}}"> {{ c.name }}</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+            <label for="whareHouse">انبار:</label>
+            <select id="whareHouse" name="whareHouse" required>
+              <option *ngFor="let w of whareHouses" value="{{w.name}}"> {{ w.name }}</option>
+            </select>
+        </div>
+
+        <div class="form-group">
+            <label for="images">تصویر:</label>
+            <input type="file" id="images" name="images" accept="image/*" (change)="handleFileInput($event)">
+        </div>
+        
+        <button (click)="createItem($event)" type="submit">تایید</button>
+      </form>
+    </div>
+</main>

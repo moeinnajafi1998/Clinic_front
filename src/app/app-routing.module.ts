@@ -21,6 +21,9 @@ import { AddUserComponent } from './components/add-user/add-user.component';
 import { ClinicDetailsComponent } from './components/clinic-details/clinic-details.component';
 import { AddCategoryComponent } from './components/add-category/add-category.component';
 import { CategoryDetailsComponent } from './components/category-details/category-details.component';
+import { ItemsComponent } from './components/items/items.component';
+import { AddItemComponent } from './components/add-item/add-item.component';
+import { ItemDetailsComponent } from './components/item-details/item-details.component';
 
 const routes: Routes = [
   {path:'',component:HomeComponent},
@@ -33,7 +36,10 @@ const routes: Routes = [
   {path:'categories',component:CategoriesComponent,canActivate:[superUserGuard]},
   {path:'add-category',component:AddCategoryComponent,canActivate:[superUserGuard]},
   {path:'category/:id',component:CategoryDetailsComponent,canActivate:[superUserGuard]},
-
+  // Item routes
+  {path:'items',component:ItemsComponent,canActivate:[superUserGuard]},
+  {path:'add-item',component:AddItemComponent,canActivate:[superUserGuard]},
+  {path:'item/:id',component:ItemDetailsComponent,canActivate:[superUserGuard]},
 
 
 
