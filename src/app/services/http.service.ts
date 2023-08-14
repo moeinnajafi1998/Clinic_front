@@ -5,6 +5,8 @@ import { Token } from '../models/Token';
 import { Clinic } from '../models/Clinic';
 import { Category } from '../models/Category';
 import { PermissionFull } from '../models/Permission';
+import { Item } from '../models/Item';
+import { WhareHouse } from '../models/WhareHouse';
 
 @Injectable({
   providedIn: 'root'
@@ -83,6 +85,46 @@ export class HttpService {
     const result = this.http.delete(`http://127.0.0.1:8000/management/category-delete/${id}/`,options)
     return result;
   }
+  // Item APIs
+  items(){
+    let headers = new HttpHeaders({"Authorization":"token " + localStorage.getItem("token")});
+    let options = {headers:headers}
+    const result = this.http.get<Item[]>('http://127.0.0.1:8000/management/items/',options)
+    return result;
+  }
+
+  createItem(form:FormData){
+    let headers = new HttpHeaders({"Authorization":"token " + localStorage.getItem("token")});
+    let options = {headers:headers}
+    const result = this.http.post<Item>('http://127.0.0.1:8000/management/item-create/',form,options)
+    return result;
+  }
+
+  retrieveItem(id:number){
+    let headers = new HttpHeaders({"Authorization":"token " + localStorage.getItem("token")});
+    let options = {headers:headers}
+    const result = this.http.get<Item>(`http://127.0.0.1:8000/management/item-retrieve/${id}/`,options)
+    return result;
+  }
+
+  updateItem(form:FormData,id:number){
+    let headers = new HttpHeaders({"Authorization":"token " + localStorage.getItem("token")});
+    let options = {headers:headers}
+    const result = this.http.patch<Item>(`http://127.0.0.1:8000/management/item-update/${id}/`,form,options)
+    return result;
+  }
+
+  deleteItem(id:number){
+    let headers = new HttpHeaders({"Authorization":"token " + localStorage.getItem("token")});
+    let options = {headers:headers}
+    const result = this.http.delete(`http://127.0.0.1:8000/management/item-delete/${id}/`,options)
+    return result;
+  }
+
+
+
+
+
 
 
 
@@ -94,6 +136,14 @@ export class HttpService {
 
 
 
+
+
+  whareHouses(){
+    let headers = new HttpHeaders({"Authorization":"token " + localStorage.getItem("token")});
+    let options = {headers:headers}
+    const result = this.http.get<WhareHouse[]>('http://127.0.0.1:8000/management/warehouses/',options)
+    return result;
+  }
 
 
 

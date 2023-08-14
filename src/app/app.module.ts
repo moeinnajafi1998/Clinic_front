@@ -33,6 +33,7 @@ import { AddItemComponent } from './components/add-item/add-item.component';
 import { AddPermissionComponent } from './components/add-permission/add-permission.component';
 import { ItemDetailsComponent } from './components/item-details/item-details.component';
 import { PermissionDetailsComponent } from './components/permission-details/permission-details.component';
+import { ItemsComponent } from './components/items/items.component';
 
 @NgModule({
   declarations: [
@@ -64,7 +65,8 @@ import { PermissionDetailsComponent } from './components/permission-details/perm
     AddItemComponent,
     AddPermissionComponent,
     ItemDetailsComponent,
-    PermissionDetailsComponent
+    PermissionDetailsComponent,
+    ItemsComponent
   ],
   imports: [
     BrowserModule,
