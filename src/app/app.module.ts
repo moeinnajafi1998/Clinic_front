@@ -25,6 +25,7 @@ import { NursesComponent } from './components/nurses/nurses.component';
 import { SicksComponent } from './components/sicks/sicks.component';
 import { WarehouseKeepersComponent } from './components/warehouse-keepers/warehouse-keepers.component';
 import { FinancialManagersComponent } from './components/financial-managers/financial-managers.component';
+import { AddUserComponent } from './components/add-user/add-user.component';
 
 @NgModule({
   declarations: [
@@ -48,7 +49,8 @@ import { FinancialManagersComponent } from './components/financial-managers/fina
     NursesComponent,
     SicksComponent,
     WarehouseKeepersComponent,
-    FinancialManagersComponent
+    FinancialManagersComponent,
+    AddUserComponent
   ],
   imports: [
     BrowserModule,

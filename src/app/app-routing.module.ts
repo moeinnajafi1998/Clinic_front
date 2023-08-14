@@ -17,6 +17,7 @@ import { NursesComponent } from './components/nurses/nurses.component';
 import { SicksComponent } from './components/sicks/sicks.component';
 import { WarehouseKeepersComponent } from './components/warehouse-keepers/warehouse-keepers.component';
 import { FinancialManagersComponent } from './components/financial-managers/financial-managers.component';
+import { AddUserComponent } from './components/add-user/add-user.component';
 
 const routes: Routes = [
   {path:'',component:HomeComponent},
@@ -25,6 +26,7 @@ const routes: Routes = [
   {path:'clinics',component:ClinicsComponent,canActivate:[superUserGuard]},
   {path:'categories',component:CategoriesComponent,canActivate:[superUserGuard]},
   {path:'add-clinic',component:AddClinicComponent,canActivate:[superUserGuard]},
+
   {path:'users',component:UsersComponent,canActivate:[superUserGuard]},
   {path:'nurses',component:NursesComponent,canActivate:[superUserGuard]},
   {path:'sicks',component:SicksComponent,canActivate:[superUserGuard]},
@@ -33,6 +35,7 @@ const routes: Routes = [
   {path:'warehouse-keepers',component:WarehouseKeepersComponent,canActivate:[superUserGuard]},
   {path:'financial-managers',component:FinancialManagersComponent,canActivate:[superUserGuard]},
 
+  {path:'add-user',component:AddUserComponent,canActivate:[superUserGuard]},
 
 
 

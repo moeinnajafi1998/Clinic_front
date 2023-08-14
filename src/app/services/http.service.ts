@@ -130,5 +130,13 @@ export class HttpService {
     return result;
   }
 
+
+  addUser(form:FormData){
+    let headers = new HttpHeaders({"Authorization":"token " + localStorage.getItem("token")});
+    let options = {headers:headers}
+    const result = this.http.post<object>('http://127.0.0.1:8000/management/create-user/',form,options)
+    return result;
+  }
+
   
 }

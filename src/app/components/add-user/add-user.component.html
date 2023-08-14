@@ -1,0 +1,43 @@
+<div class="main">
+    <div class="form-container">
+        <h1>ثبت نام کاربر جدید</h1>
+        <form  method="post">
+            <div class="form-group">
+                <label for="username">نام کاربری:</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+            
+            <div class="form-group">
+                <label for="password">رمز عبور:</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            
+            <div class="form-group">
+                <label>Is Superuser:</label>
+                <input type="radio" id="superuser_yes" name="is_superuser" value="yes">
+                <label for="superuser_yes">بله</label>
+                <input type="radio" id="superuser_no" name="is_superuser" value="no">
+                <label for="superuser_no">خیر</label>
+            </div>
+            
+            <div class="form-group">
+                <label for="user_type">نوع کاربر:</label>
+                <select id="user_type" name="user_type">
+                    <option value="Clinic_Admin">مدیر درمانگاه</option>
+                    <option value="Typical_User">منشی</option>
+                    <option value="Nurse">پرستار</option>
+                    <option value="Sick">بیمار</option>
+                    <option value="Warehouse_Keeper">انبار دار</option>
+                    <option value="Financial_Manager">مدیر مالی</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="images">تصاویر:</label>
+                <input type="file" id="images" name="images" accept="image/*" (change)="handleFileInput($event)">
+            </div>
+            
+            <button (click)="createUser($event)" type="submit">ثبت نام</button>
+        </form>
+    </div>
+</div>
