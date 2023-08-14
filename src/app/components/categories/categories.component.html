@@ -2,7 +2,7 @@
     <div class="container ">
       <div class="heading_container heading_center">
         <h2>
-          کلینیک ها
+          دسته بندی ها
         </h2>
         <p>
           
@@ -21,6 +21,7 @@
               <p>
                 {{ c.type }}
               </p>
+              <button (click)="categoryDetails(c.id)" class="btn btn-sm btn-success">جزئیات</button>
             </div>
           </div>
         </div>

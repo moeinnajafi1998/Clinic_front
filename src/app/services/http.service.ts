@@ -56,11 +56,39 @@ export class HttpService {
     return result;
   }
 
+  createCategory(form:FormData){
+    let headers = new HttpHeaders({"Authorization":"token " + localStorage.getItem("token")});
+    let options = {headers:headers}
+    const result = this.http.post<Category>('http://127.0.0.1:8000/management/category-create/',form,options)
+    return result;
+  }
+
+  retrieveCategory(id:number){
+    let headers = new HttpHeaders({"Authorization":"token " + localStorage.getItem("token")});
+    let options = {headers:headers}
+    const result = this.http.get<Category>(`http://127.0.0.1:8000/management/category-retrieve/${id}/`,options)
+    return result;
+  }
+
+  updateCategory(form:FormData,id:number){
+    let headers = new HttpHeaders({"Authorization":"token " + localStorage.getItem("token")});
+    let options = {headers:headers}
+    const result = this.http.patch<Category>(`http://127.0.0.1:8000/management/category-update/${id}/`,form,options)
+    return result;
+  }
+
+  deleteCategory(id:number){
+    let headers = new HttpHeaders({"Authorization":"token " + localStorage.getItem("token")});
+    let options = {headers:headers}
+    const result = this.http.delete(`http://127.0.0.1:8000/management/category-delete/${id}/`,options)
+    return result;
+  }
 
 
 
 
 
+  
 
 
 

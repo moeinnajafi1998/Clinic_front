@@ -22,6 +22,7 @@ export class ClinicDetailsComponent {
     this.http.retrieveClinic(this.id).pipe().subscribe(res=>{
       $('#name').val(res.name);
       $('#address').val(res.address);
+      
     })
 
   }
