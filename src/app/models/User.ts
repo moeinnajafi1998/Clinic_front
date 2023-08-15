@@ -8,6 +8,7 @@ export interface User {
     user_type : string;
     user_permissions : Permission[];
     image : string;
+    is_staff : boolean;
 }
 
 export interface Credential {

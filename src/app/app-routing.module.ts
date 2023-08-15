@@ -29,6 +29,7 @@ import { AddWharehouseComponent } from './components/add-wharehouse/add-wharehou
 import { WharehouseDetailsComponent } from './components/wharehouse-details/wharehouse-details.component';
 import { AddPermissionComponent } from './components/add-permission/add-permission.component';
 import { PermissionDetailsComponent } from './components/permission-details/permission-details.component';
+import { UserDatailsComponent } from './components/user-datails/user-datails.component';
 
 const routes: Routes = [
   {path:'',component:HomeComponent},
@@ -53,24 +54,24 @@ const routes: Routes = [
   {path:'permissions',component:PermissionsComponent,canActivate:[superUserGuard]},
   {path:'add-permission',component:AddPermissionComponent,canActivate:[superUserGuard]},
   {path:'permission/:id',component:PermissionDetailsComponent,canActivate:[superUserGuard]},
-
-
-
+  // User routes
+  {path:'users',component:UsersComponent,canActivate:[superUserGuard]},
+  {path:'clinic-admins',component:ClinicAdminsComponent,canActivate:[superUserGuard]},
+  {path:'typical-users',component:TypicalUsersComponent,canActivate:[superUserGuard]},
+  {path:'nurses',component:NursesComponent,canActivate:[superUserGuard]},
+  {path:'sicks',component:SicksComponent,canActivate:[superUserGuard]},
+  {path:'warehouse-keepers',component:WarehouseKeepersComponent,canActivate:[superUserGuard]},
+  {path:'financial-managers',component:FinancialManagersComponent,canActivate:[superUserGuard]},
+  {path:'add-user',component:AddUserComponent,canActivate:[superUserGuard]},
+  {path:'user/:id',component:UserDatailsComponent,canActivate:[superUserGuard]},
+  // Other routes
+  {path:'report',component:ReportComponent,canActivate:[superUserGuard]},
 
 
 
   
 
 
-  {path:'report',component:ReportComponent,canActivate:[superUserGuard]},
-  {path:'users',component:UsersComponent,canActivate:[superUserGuard]},
-  {path:'nurses',component:NursesComponent,canActivate:[superUserGuard]},
-  {path:'sicks',component:SicksComponent,canActivate:[superUserGuard]},
-  {path:'clinic-admins',component:ClinicAdminsComponent,canActivate:[superUserGuard]},
-  {path:'typical-users',component:TypicalUsersComponent,canActivate:[superUserGuard]},
-  {path:'warehouse-keepers',component:WarehouseKeepersComponent,canActivate:[superUserGuard]},
-  {path:'financial-managers',component:FinancialManagersComponent,canActivate:[superUserGuard]},
-  {path:'add-user',component:AddUserComponent,canActivate:[superUserGuard]},
 
 
   {path:'not-found',component:NotFoundComponent},

@@ -21,11 +21,9 @@ export class UsersComponent {
   }
 
 
-  deleteUser(e:Event,id:number){
-    this.http.deleteUser(id).pipe().subscribe(res=>{
-      console.log(res);
-      this.router.navigate(['/']);
-    })
+  userDetails(id:number){
+    this.router.navigate([`/user/${id}`]);
   }
+
 
 }

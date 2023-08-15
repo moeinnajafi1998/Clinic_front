@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { User } from 'src/app/models/User';
 import { HttpService } from 'src/app/services/http.service';
 
@@ -8,7 +9,7 @@ import { HttpService } from 'src/app/services/http.service';
   styleUrls: ['./warehouse-keepers.component.css']
 })
 export class WarehouseKeepersComponent {
-  constructor(private http:HttpService){}
+  constructor(private http:HttpService,private router:Router){}
 
   wareHouseKeepers : User[] = [];
 
@@ -16,5 +17,9 @@ export class WarehouseKeepersComponent {
     this.http.warehouseKeepers().pipe().subscribe(res=>{
       this.wareHouseKeepers = res;
     })
+  }
+
+  userDetails(id:number){
+    this.router.navigate([`/user/${id}`]);
   }
 }

@@ -23,12 +23,13 @@ export class AddUserComponent {
     this.formData.append('username',$('#username').val());
     this.formData.append('password',$('#password').val());
     this.formData.append('is_superuser',$('input[name="is_superuser"]:checked').val());
+    this.formData.append('is_staff',$('input[name="staff"]:checked').val());
     this.formData.append('user_type',$('#user_type').val());
     for (let i = 0; i < this.images.length; i++) {
       this.formData.append('image', this.images[i]);
     }
 
-    this.http.addUser(this.formData).pipe().subscribe(res=>{
+    this.http.createUser(this.formData).pipe().subscribe(res=>{
       console.log(res);
       this.router.navigate(['/users/']);
     });
