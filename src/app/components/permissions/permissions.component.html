@@ -17,7 +17,7 @@
 							content_type
 						</th>
                         <th>
-							حذف
+							جزئیات
 						</th>
 					</tr>
 				</thead>
@@ -36,7 +36,7 @@
 							{{ p.content_type }}
 						</td>
                         <td>
-							<button (click)="DeletePermissionComponent($event, p.id)" class="btn btn-danger" >حذف</button>
+							<button (click)="permissionDetails(p.id)" class="btn btn-sm btn-success">جزئیات</button>
 						</td>
 					</tr>
 				</tbody>
