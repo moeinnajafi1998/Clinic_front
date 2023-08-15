@@ -17,9 +17,7 @@ import { AddClinicComponent } from './components/add-clinic/add-clinic.component
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { UsersComponent } from './components/users/users.component';
 import { ClinicAdminsComponent } from './components/clinic-admins/clinic-admins.component';
-import { PermissionsComponent } from './components/permissions/permissions/permissions.component';
-import { UpdatePermissionComponent } from './components/permissions/update-permission/update-permission.component';
-import { CreatePermissionComponent } from './components/permissions/create-permission/create-permission.component';
+import { PermissionsComponent } from './components/permissions/permissions.component';
 import { TypicalUsersComponent } from './components/typical-users/typical-users.component';
 import { NursesComponent } from './components/nurses/nurses.component';
 import { SicksComponent } from './components/sicks/sicks.component';
@@ -54,8 +52,6 @@ import { WharehouseDetailsComponent } from './components/wharehouse-details/whar
     UsersComponent,
     ClinicAdminsComponent,
     PermissionsComponent,
-    UpdatePermissionComponent,
-    CreatePermissionComponent,
     TypicalUsersComponent,
     NursesComponent,
     SicksComponent,
@@ -72,7 +68,8 @@ import { WharehouseDetailsComponent } from './components/wharehouse-details/whar
     ItemsComponent,
     WharehousesComponent,
     AddWharehouseComponent,
-    WharehouseDetailsComponent
+    WharehouseDetailsComponent,
+    
   ],
   imports: [
     BrowserModule,

@@ -155,8 +155,41 @@ export class HttpService {
     const result = this.http.delete(`http://127.0.0.1:8000/management/wharehouse-delete/${id}/`,options)
     return result;
   }
+  // Permission APIs
+  permissions(){
+    let headers = new HttpHeaders({"Authorization":"token " + localStorage.getItem("token")});
+    let options = {headers:headers}
+    const result = this.http.get<PermissionFull[]>('http://127.0.0.1:8000/management/permissions/',options)
+    return result;
+  }
 
+  createPermission(form:FormData){
+    let headers = new HttpHeaders({"Authorization":"token " + localStorage.getItem("token")});
+    let options = {headers:headers}
+    const result = this.http.post<PermissionFull>('http://127.0.0.1:8000/management/permission-create/',form,options)
+    return result;
+  }
 
+  retrievePermission(id:number){
+    let headers = new HttpHeaders({"Authorization":"token " + localStorage.getItem("token")});
+    let options = {headers:headers}
+    const result = this.http.get<PermissionFull>(`http://127.0.0.1:8000/management/permission-retrieve/${id}/`,options)
+    return result;
+  }
+
+  updatePermission(form:FormData,id:number){
+    let headers = new HttpHeaders({"Authorization":"token " + localStorage.getItem("token")});
+    let options = {headers:headers}
+    const result = this.http.patch<PermissionFull>(`http://127.0.0.1:8000/management/permission-update/${id}/`,form,options)
+    return result;
+  }
+
+  deletePermission(id:number){
+    let headers = new HttpHeaders({"Authorization":"token " + localStorage.getItem("token")});
+    let options = {headers:headers}
+    const result = this.http.delete(`http://127.0.0.1:8000/management/permission-delete/${id}/`,options)
+    return result;
+  }
 
 
 
@@ -251,23 +284,6 @@ export class HttpService {
     const result = this.http.get<User[]>('http://127.0.0.1:8000/management/users/',options)
     return result;
   }
-
-
-  permissions(){
-    let headers = new HttpHeaders({"Authorization":"token " + localStorage.getItem("token")});
-    let options = {headers:headers}
-    const result = this.http.get<PermissionFull[]>('http://127.0.0.1:8000/management/list-permissions/',options)
-    return result;
-  }
-  
-
-  deletePermission(id:number){
-    let headers = new HttpHeaders({"Authorization":"token " + localStorage.getItem("token")});
-    let options = {headers:headers}
-    const result = this.http.delete(`http://127.0.0.1:8000/management/delete-permission/${id}/`,options)
-    return result;
-  }
-
 
   addUser(form:FormData){
     let headers = new HttpHeaders({"Authorization":"token " + localStorage.getItem("token")});

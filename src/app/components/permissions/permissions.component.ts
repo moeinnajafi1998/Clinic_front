@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { PermissionFull } from 'src/app/models/Permission';
 import { HttpService } from 'src/app/services/http.service';
 
@@ -8,7 +9,7 @@ import { HttpService } from 'src/app/services/http.service';
   styleUrls: ['./permissions.component.css']
 })
 export class PermissionsComponent {
-  constructor(private http:HttpService){}
+  constructor(private http:HttpService,private router:Router){}
 
   permissions:PermissionFull[] = [];
 
@@ -23,11 +24,9 @@ export class PermissionsComponent {
 
 
 
-  DeletePermissionComponent(e:Event,id:number){
-    console.log("permission id = " + id);
-    this.http.deletePermission(id).pipe().subscribe(res=>{
-      alert("حذف شد.");
-    })
+  permissionDetails(id:number){
+    this.router.navigate([`/permission/${id}`]);
   }
+
 
 }

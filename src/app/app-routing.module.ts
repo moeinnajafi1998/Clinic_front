@@ -11,7 +11,7 @@ import { AddClinicComponent } from './components/add-clinic/add-clinic.component
 import { NotFoundComponent } from './components/not-found/not-found.component';
 import { UsersComponent } from './components/users/users.component';
 import { ClinicAdminsComponent } from './components/clinic-admins/clinic-admins.component';
-import { PermissionsComponent } from './components/permissions/permissions/permissions.component';
+import { PermissionsComponent } from './components/permissions/permissions.component';
 import { TypicalUsersComponent } from './components/typical-users/typical-users.component';
 import { NursesComponent } from './components/nurses/nurses.component';
 import { SicksComponent } from './components/sicks/sicks.component';
@@ -27,6 +27,8 @@ import { ItemDetailsComponent } from './components/item-details/item-details.com
 import { WharehousesComponent } from './components/wharehouses/wharehouses.component';
 import { AddWharehouseComponent } from './components/add-wharehouse/add-wharehouse.component';
 import { WharehouseDetailsComponent } from './components/wharehouse-details/wharehouse-details.component';
+import { AddPermissionComponent } from './components/add-permission/add-permission.component';
+import { PermissionDetailsComponent } from './components/permission-details/permission-details.component';
 
 const routes: Routes = [
   {path:'',component:HomeComponent},
@@ -47,10 +49,17 @@ const routes: Routes = [
   {path:'wharehouses',component:WharehousesComponent,canActivate:[superUserGuard]},
   {path:'add-wharehouse',component:AddWharehouseComponent,canActivate:[superUserGuard]},
   {path:'wharehouse/:id',component:WharehouseDetailsComponent,canActivate:[superUserGuard]},
+  // Permission routes
+  {path:'permissions',component:PermissionsComponent,canActivate:[superUserGuard]},
+  {path:'add-permission',component:AddPermissionComponent,canActivate:[superUserGuard]},
+  {path:'permission/:id',component:PermissionDetailsComponent,canActivate:[superUserGuard]},
 
 
 
 
+
+
+  
 
 
   {path:'report',component:ReportComponent,canActivate:[superUserGuard]},
@@ -62,7 +71,6 @@ const routes: Routes = [
   {path:'warehouse-keepers',component:WarehouseKeepersComponent,canActivate:[superUserGuard]},
   {path:'financial-managers',component:FinancialManagersComponent,canActivate:[superUserGuard]},
   {path:'add-user',component:AddUserComponent,canActivate:[superUserGuard]},
-  {path:'permissions',component:PermissionsComponent,canActivate:[superUserGuard]},
 
 
   {path:'not-found',component:NotFoundComponent},
