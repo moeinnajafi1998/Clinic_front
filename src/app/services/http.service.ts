@@ -120,10 +120,41 @@ export class HttpService {
     const result = this.http.delete(`http://127.0.0.1:8000/management/item-delete/${id}/`,options)
     return result;
   }
+  // WhareHouse APIs
+  whareHouses(){
+    let headers = new HttpHeaders({"Authorization":"token " + localStorage.getItem("token")});
+    let options = {headers:headers}
+    const result = this.http.get<WhareHouse[]>('http://127.0.0.1:8000/management/wharehouses/',options)
+    return result;
+  }
 
+  createWhareHouse(form:FormData){
+    let headers = new HttpHeaders({"Authorization":"token " + localStorage.getItem("token")});
+    let options = {headers:headers}
+    const result = this.http.post<WhareHouse>('http://127.0.0.1:8000/management/wharehouse-create/',form,options)
+    return result;
+  }
 
+  retrieveWhareHouse(id:number){
+    let headers = new HttpHeaders({"Authorization":"token " + localStorage.getItem("token")});
+    let options = {headers:headers}
+    const result = this.http.get<WhareHouse>(`http://127.0.0.1:8000/management/wharehouse-retrieve/${id}/`,options)
+    return result;
+  }
 
+  updateWhareHouse(form:FormData,id:number){
+    let headers = new HttpHeaders({"Authorization":"token " + localStorage.getItem("token")});
+    let options = {headers:headers}
+    const result = this.http.patch<WhareHouse>(`http://127.0.0.1:8000/management/wharehouse-update/${id}/`,form,options)
+    return result;
+  }
 
+  deleteWhareHouse(id:number){
+    let headers = new HttpHeaders({"Authorization":"token " + localStorage.getItem("token")});
+    let options = {headers:headers}
+    const result = this.http.delete(`http://127.0.0.1:8000/management/wharehouse-delete/${id}/`,options)
+    return result;
+  }
 
 
 
@@ -138,12 +169,7 @@ export class HttpService {
 
 
 
-  whareHouses(){
-    let headers = new HttpHeaders({"Authorization":"token " + localStorage.getItem("token")});
-    let options = {headers:headers}
-    const result = this.http.get<WhareHouse[]>('http://127.0.0.1:8000/management/warehouses/',options)
-    return result;
-  }
+
 
 
 
