@@ -11,6 +11,7 @@ declare var $ : any;
 })
 export class AddClinicComponent {
   clinicAdmins : User[] = [];
+  typical_users : User[] = [];
   formData = new FormData();
 
   constructor(private http:HttpService,private router:Router){}
@@ -18,7 +19,11 @@ export class AddClinicComponent {
   ngOnInit(){
     this.http.clinicAdmins().pipe().subscribe(res=>{
       this.clinicAdmins = res;
-    })
+    });
+
+    this.http.typicalUsers().pipe().subscribe(res=>{
+      this.typical_users = res;
+    });
   }
 
 
@@ -27,7 +32,7 @@ export class AddClinicComponent {
     this.formData.append('name',$('#name').val());
     this.formData.append('address',$('#address').val());
     this.formData.append('manager',$('#manager').val());
-
+    this.formData.append('typical_user',$('#typical_user').val());
     this.http.createClinic(this.formData).pipe().subscribe(
       res=>{
         this.router.navigate(['/clinics/']);

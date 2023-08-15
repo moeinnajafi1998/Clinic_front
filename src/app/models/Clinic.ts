@@ -3,4 +3,5 @@ export interface Clinic{
     name : string;
     address : string;
     manager : string;
+    typical_user : string;
 }

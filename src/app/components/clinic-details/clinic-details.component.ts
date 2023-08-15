@@ -10,6 +10,8 @@ declare var $ : any;
 })
 export class ClinicDetailsComponent {
   clinicAdmins : User[] = [];
+  typical_users : User[] = [];
+
   formData = new FormData();
   id = this.route.snapshot.params['id'];
   constructor(private http:HttpService,private router:Router,private route:ActivatedRoute){}
@@ -19,10 +21,13 @@ export class ClinicDetailsComponent {
       this.clinicAdmins = res;
     })
 
+    this.http.typicalUsers().pipe().subscribe(res=>{
+      this.typical_users = res;
+    })
+
     this.http.retrieveClinic(this.id).pipe().subscribe(res=>{
       $('#name').val(res.name);
       $('#address').val(res.address);
-      
     })
 
   }
@@ -33,6 +38,7 @@ export class ClinicDetailsComponent {
     this.formData.append('name',$('#name').val());
     this.formData.append('address',$('#address').val());
     this.formData.append('manager',$('#manager').val());
+    this.formData.append('typical_user',$('#typical_user').val());
     this.http.updateClinic(this.formData,this.id).pipe().subscribe(
       res=>{
         this.router.navigate(['/clinics/']);
