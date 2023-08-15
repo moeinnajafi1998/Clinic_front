@@ -7,14 +7,16 @@
                         <img src="{{ u.image }}" alt="{{ u.username }}" class="user-image">
                         <h3 class="mt-3">Username: {{ u.username }}</h3>
                         <p *ngIf="u.user_type != null">User Type: {{ u.user_type }}</p>
-                        <button *ngIf="u.is_superuser" class="btn btn-success btn-sm">superuser</button>
+                        <span *ngIf="u.is_superuser" class="badge bg-primary">superuser</span>
+                        <span *ngIf="u.is_staff" class="badge bg-primary">دسترسی به پنل مدیریت</span>
+                        <button (click)="userDetails(u.id)" class="btn btn-sm btn-success">جزئیات</button>
+
                     </div>
-                        <hr>
-                        <h5 class="text-center">User Permissions</h5>
-                        <ul>
-                            <li *ngFor="let p of u.user_permissions">Permission Name: {{ p.codename }}</li>
-                        </ul>
-                        <button (click)="deleteUser($event,u.id)" class="btn btn-danger">حذف</button>
+                    <hr>
+                    <h5 class="text-center"> دسترسی در پنل ادمین</h5>
+                    <ul>
+                        <li *ngFor="let p of u.user_permissions"> {{ p.codename }}</li>
+                    </ul>
                 </div>
             </div>
         </div>

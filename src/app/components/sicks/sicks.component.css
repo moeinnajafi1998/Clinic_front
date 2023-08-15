@@ -1,19 +1,32 @@
 .main {
-    background-color: #f8f9fa;
-    padding: 50px;
-    margin: 20px;
-  }
-  
-  .user-card {
-    background-color: #fff;
-    border-radius: 10px;
-    padding: 20px;
-    box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.1);
-  }
-  
-  .user-image {
-    width: 100px;
-    height: 100px;
-    border-radius: 50%;
-    object-fit: cover;
-  }
+  background-color: #f8f9fa;
+  padding: 50px;
+  margin: 20px;
+}
+
+.user-card {
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+.user-image {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+.col-md-6{
+  background-color: #fff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  text-align: center;
+  width: 80%;
+  height: 100%;
+  margin: 10px;
+}
+
+button,span{
+  margin: 5px;
+}

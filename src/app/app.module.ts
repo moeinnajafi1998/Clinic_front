@@ -35,6 +35,7 @@ import { ItemsComponent } from './components/items/items.component';
 import { WharehousesComponent } from './components/wharehouses/wharehouses.component';
 import { AddWharehouseComponent } from './components/add-wharehouse/add-wharehouse.component';
 import { WharehouseDetailsComponent } from './components/wharehouse-details/wharehouse-details.component';
+import { UserDatailsComponent } from './components/user-datails/user-datails.component';
 
 @NgModule({
   declarations: [
@@ -69,6 +70,7 @@ import { WharehouseDetailsComponent } from './components/wharehouse-details/whar
     WharehousesComponent,
     AddWharehouseComponent,
     WharehouseDetailsComponent,
+    UserDatailsComponent,
     
   ],
   imports: [

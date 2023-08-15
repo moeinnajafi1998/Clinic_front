@@ -1,6 +1,7 @@
 <div class="main" dir="rtl">
     <div class="form-container">
-        <h1>ثبت نام کاربر جدید</h1>
+        <h1>ویرایش  کاربر </h1>
+        <img height="80" width="60" src="{{imageSrc}}"/>
         <form  method="post">
             <div class="form-group">
                 <label for="username">نام کاربری:</label>
@@ -54,8 +55,8 @@
                 <label for="images">تصاویر:</label>
                 <input type="file" id="images" name="images" accept="image/*" (change)="handleFileInput($event)">
             </div>
-            
-            <button (click)="createUser($event)" type="submit">ثبت نام</button>
+            <button class="btn btn-lg btn-success" (click)="updateUser($event)" type="submit">ویرایش</button>
+            <button class="btn btn-sm btn-danger" (click)="deleteUser($event)" type="submit">حذف درمانگاه</button>
         </form>
     </div>
 </div>

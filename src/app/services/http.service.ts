@@ -190,29 +190,90 @@ export class HttpService {
     const result = this.http.delete(`http://127.0.0.1:8000/management/permission-delete/${id}/`,options)
     return result;
   }
+  // User APIs
+  users(){
+    let headers = new HttpHeaders({"Authorization":"token " + localStorage.getItem("token")});
+    let options = {headers:headers}
+    const result = this.http.get<User[]>('http://127.0.0.1:8000/management/users/',options)
+    return result;
+  }
 
+  clinicAdmins(){
+    let headers = new HttpHeaders({"Authorization":"token " + localStorage.getItem("token")});
+    let options = {headers:headers}
+    const result = this.http.get<User[]>('http://127.0.0.1:8000/management/clinic-admins/',options)
+    return result;
+  }
 
+  typicalUsers(){
+    let headers = new HttpHeaders({"Authorization":"token " + localStorage.getItem("token")});
+    let options = {headers:headers}
+    const result = this.http.get<User[]>('http://127.0.0.1:8000/management/typical-users/',options)
+    return result;
+  }
 
+  nurses(){
+    let headers = new HttpHeaders({"Authorization":"token " + localStorage.getItem("token")});
+    let options = {headers:headers}
+    const result = this.http.get<User[]>('http://127.0.0.1:8000/management/nurses/',options)
+    return result;
+  }
 
+  sicks(){
+    let headers = new HttpHeaders({"Authorization":"token " + localStorage.getItem("token")});
+    let options = {headers:headers}
+    const result = this.http.get<User[]>('http://127.0.0.1:8000/management/sicks/',options)
+    return result;
+  }
+
+  warehouseKeepers(){
+    let headers = new HttpHeaders({"Authorization":"token " + localStorage.getItem("token")});
+    let options = {headers:headers}
+    const result = this.http.get<User[]>('http://127.0.0.1:8000/management/warehouse-keepers/',options)
+    return result;
+  }
+
+  financialManagers(){
+    let headers = new HttpHeaders({"Authorization":"token " + localStorage.getItem("token")});
+    let options = {headers:headers}
+    const result = this.http.get<User[]>('http://127.0.0.1:8000/management/financial-managers/',options)
+    return result;
+  }
   
+  createUser(form:FormData){
+    let headers = new HttpHeaders({"Authorization":"token " + localStorage.getItem("token")});
+    let options = {headers:headers}
+    const result = this.http.post<User>('http://127.0.0.1:8000/management/user-create/',form,options)
+    return result;
+  }
 
+  retrieveUser(id:number){
+    let headers = new HttpHeaders({"Authorization":"token " + localStorage.getItem("token")});
+    let options = {headers:headers}
+    const result = this.http.get<User>(`http://127.0.0.1:8000/management/user-retrieve/${id}/`,options)
+    return result;
+  }
 
+  updateUser(form:FormData,id:number){
+    let headers = new HttpHeaders({"Authorization":"token " + localStorage.getItem("token")});
+    let options = {headers:headers}
+    const result = this.http.patch<User>(`http://127.0.0.1:8000/management/user-update/${id}/`,form,options)
+    return result;
+  }
 
-
-
-
-
-
-
-
-
+  deleteUser(id:number){
+    let headers = new HttpHeaders({"Authorization":"token " + localStorage.getItem("token")});
+    let options = {headers:headers}
+    const result = this.http.delete(`http://127.0.0.1:8000/management/user-delete/${id}/`,options)
+    return result;
+  }
+  // other APIs
   userRecognization(){
     let headers = new HttpHeaders({"Authorization":"token " + localStorage.getItem("token")});
     let options = {headers:headers}
     const result = this.http.get<User>('http://127.0.0.1:8000/management/user-recognization',options)
     return result;
   }
-
 
   logIn(credential:Credential){
     const result = this.http.post<Token>('http://127.0.0.1:8000/token-auth',credential)
@@ -225,81 +286,5 @@ export class HttpService {
     const result = this.http.get<number>('http://127.0.0.1:8000/management/test-token',options)
     return result;
   }
-
-
-
-
-
-  clinicAdmins(){
-    let headers = new HttpHeaders({"Authorization":"token " + localStorage.getItem("token")});
-    let options = {headers:headers}
-    const result = this.http.get<User[]>('http://127.0.0.1:8000/management/clinic-admins/',options)
-    return result;
-  }
-
-
-  typicalUsers(){
-    let headers = new HttpHeaders({"Authorization":"token " + localStorage.getItem("token")});
-    let options = {headers:headers}
-    const result = this.http.get<User[]>('http://127.0.0.1:8000/management/typical-users/',options)
-    return result;
-  }
-
-
-  nurses(){
-    let headers = new HttpHeaders({"Authorization":"token " + localStorage.getItem("token")});
-    let options = {headers:headers}
-    const result = this.http.get<User[]>('http://127.0.0.1:8000/management/nurse-list/',options)
-    return result;
-  }
-
-
-  sicks(){
-    let headers = new HttpHeaders({"Authorization":"token " + localStorage.getItem("token")});
-    let options = {headers:headers}
-    const result = this.http.get<User[]>('http://127.0.0.1:8000/management/sick-list/',options)
-    return result;
-  }
-
-
-  warehouseKeepers(){
-    let headers = new HttpHeaders({"Authorization":"token " + localStorage.getItem("token")});
-    let options = {headers:headers}
-    const result = this.http.get<User[]>('http://127.0.0.1:8000/management/warehouse-keepers/',options)
-    return result;
-  }
-
-
-  financialManagers(){
-    let headers = new HttpHeaders({"Authorization":"token " + localStorage.getItem("token")});
-    let options = {headers:headers}
-    const result = this.http.get<User[]>('http://127.0.0.1:8000/management/financial-managers/',options)
-    return result;
-  }
-
-  
-  users(){
-    let headers = new HttpHeaders({"Authorization":"token " + localStorage.getItem("token")});
-    let options = {headers:headers}
-    const result = this.http.get<User[]>('http://127.0.0.1:8000/management/users/',options)
-    return result;
-  }
-
-  addUser(form:FormData){
-    let headers = new HttpHeaders({"Authorization":"token " + localStorage.getItem("token")});
-    let options = {headers:headers}
-    const result = this.http.post<object>('http://127.0.0.1:8000/management/create-user/',form,options)
-    return result;
-  }
-
-
-
-  deleteUser(id:number){
-    let headers = new HttpHeaders({"Authorization":"token " + localStorage.getItem("token")});
-    let options = {headers:headers}
-    const result = this.http.delete(`http://127.0.0.1:8000/management/delete-user/${id}/`,options)
-    return result;
-  }
-
   
 }

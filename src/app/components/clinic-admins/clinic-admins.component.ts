@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { User } from 'src/app/models/User';
 import { HttpService } from 'src/app/services/http.service';
 
@@ -8,7 +9,7 @@ import { HttpService } from 'src/app/services/http.service';
   styleUrls: ['./clinic-admins.component.css']
 })
 export class ClinicAdminsComponent {
-  constructor(private http:HttpService){}
+  constructor(private http:HttpService,private router:Router){}
 
   clinicAdmins : User[] = [];
 
@@ -16,6 +17,10 @@ export class ClinicAdminsComponent {
     this.http.clinicAdmins().pipe().subscribe(res=>{
       this.clinicAdmins = res;
     })
+  }
+
+  userDetails(id:number){
+    this.router.navigate([`/user/${id}`]);
   }
 
 }

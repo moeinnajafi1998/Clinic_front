@@ -26,8 +26,8 @@
         </ul>
 
         <div *ngIf="is_superUser"  class="dropdown">
-          <a class="dropdown-toggle" data-bs-toggle="dropdown">مدیریت کل</a>
-          <div class="dropdown-menu" >
+          <a class="dropdown-toggle" data-bs-toggle="dropdown" style="text-decoration: none; color: #000; margin: 5px;">مدیریت کل</a>
+          <div class="dropdown-menu" style="text-align: right;">
             <a [routerLink]="['/clinics/']" class="dropdown-item">درمانگاه ها</a>
             <a [routerLink]="['/add-clinic/']" class="dropdown-item">درمانگاه جدید</a>
             <hr/>
@@ -48,22 +48,18 @@
 
 
 
-        <div *ngIf="is_superUser"  class="dropdown">
-          <a class="dropdown-toggle" data-bs-toggle="dropdown">کاربران</a>
-          <div class="dropdown-menu" >
-            <a [routerLink]="['/users/']" class="dropdown-item"> کاربران</a>
+        <div *ngIf="is_superUser"  class="dropdown" >
+          <a class="dropdown-toggle" data-bs-toggle="dropdown" style="text-decoration: none; color: #000; margin: 5px;">کاربران</a>
+          <div class="dropdown-menu" style="text-align: right;">
+            <a [routerLink]="['/users/']" class="dropdown-item"> لیست تمام کاربران</a>
             <a [routerLink]="['/clinic-admins/']" class="dropdown-item"> مدیران درمانگاه ها</a>
             <a [routerLink]="['/typical-users/']" class="dropdown-item"> منشی ها</a>
             <a [routerLink]="['/nurses/']" class="dropdown-item"> پرستار ها</a>
             <a [routerLink]="['/sicks/']" class="dropdown-item">  بیماران</a>
             <a [routerLink]="['/warehouse-keepers/']" class="dropdown-item">  انباردار ها</a>
             <a [routerLink]="['/financial-managers/']" class="dropdown-item">  مدیران مالی</a>
-            <!-- <a [routerLink]="['/']" class="dropdown-item"> انبار ها</a> -->
-            <!-- <a [routerLink]="['/']" class="dropdown-item"> کاربران عادی</a> -->
-            <!-- <a [routerLink]="['/']" class="dropdown-item">  بیمار ها</a> -->
-            <!-- <a [routerLink]="['/']" class="dropdown-item">   پرستار ها</a> -->
-            <!-- <a [routerLink]="['/']" class="dropdown-item">  تجهیزات</a> -->
-            <a [routerLink]="['/add-user/']" class="dropdown-item">  کاربر جدید</a>
+            <hr/>
+            <a [routerLink]="['/add-user/']" class="dropdown-item"> + کاربر جدید </a>
           </div>
         </div>
 
