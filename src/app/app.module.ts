@@ -36,6 +36,8 @@ import { WharehousesComponent } from './components/wharehouses/wharehouses.compo
 import { AddWharehouseComponent } from './components/add-wharehouse/add-wharehouse.component';
 import { WharehouseDetailsComponent } from './components/wharehouse-details/wharehouse-details.component';
 import { UserDatailsComponent } from './components/user-datails/user-datails.component';
+import { AddSessionRequestComponent } from './components/SickFolder/add-session-request/add-session-request.component';
+import { SickSessionrequestsComponent } from './components/SickFolder/sick-sessionrequests/sick-sessionrequests.component';
 
 @NgModule({
   declarations: [
@@ -71,6 +73,8 @@ import { UserDatailsComponent } from './components/user-datails/user-datails.com
     AddWharehouseComponent,
     WharehouseDetailsComponent,
     UserDatailsComponent,
+    AddSessionRequestComponent,
+    SickSessionrequestsComponent,
     
   ],
   imports: [

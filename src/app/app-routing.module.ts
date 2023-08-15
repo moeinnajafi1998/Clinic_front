@@ -30,6 +30,8 @@ import { WharehouseDetailsComponent } from './components/wharehouse-details/whar
 import { AddPermissionComponent } from './components/add-permission/add-permission.component';
 import { PermissionDetailsComponent } from './components/permission-details/permission-details.component';
 import { UserDatailsComponent } from './components/user-datails/user-datails.component';
+import { AddSessionRequestComponent } from './components/SickFolder/add-session-request/add-session-request.component';
+import { sickGuard } from './guards/sick.guard';
 
 const routes: Routes = [
   {path:'',component:HomeComponent},
@@ -66,7 +68,8 @@ const routes: Routes = [
   {path:'user/:id',component:UserDatailsComponent,canActivate:[superUserGuard]},
   // Other routes
   {path:'report',component:ReportComponent,canActivate:[superUserGuard]},
-
+  // User routes
+  {path:'add-sessionrequest',component:AddSessionRequestComponent,canActivate:[sickGuard]},
 
 
   

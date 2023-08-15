@@ -1,0 +1,25 @@
+<main dir="rtl">
+    <div class="form-container">
+      <form>
+        <div class="form-group">
+          <label for="name">نام بیمار:</label>
+          <input type="text" id="name" name="name" required>
+        </div>
+
+        <div class="form-group">
+          <label for="clinic">درمانگاه:</label>
+          <select id="clinic" name="clinic" required>
+            <option *ngFor="let c of clinics" value="{{c.name}}"> {{ c.name }}</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+            <label for="description">توضیحات :</label>
+            <textarea rows="4" cols="30" id="description" name="description"></textarea>
+        </div>
+
+        
+        <button (click)="createSessionRequest($event)" type="submit">ثبت</button>
+      </form>
+    </div>
+</main>
