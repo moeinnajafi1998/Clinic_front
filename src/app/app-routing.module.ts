@@ -24,6 +24,9 @@ import { CategoryDetailsComponent } from './components/category-details/category
 import { ItemsComponent } from './components/items/items.component';
 import { AddItemComponent } from './components/add-item/add-item.component';
 import { ItemDetailsComponent } from './components/item-details/item-details.component';
+import { WharehousesComponent } from './components/wharehouses/wharehouses.component';
+import { AddWharehouseComponent } from './components/add-wharehouse/add-wharehouse.component';
+import { WharehouseDetailsComponent } from './components/wharehouse-details/wharehouse-details.component';
 
 const routes: Routes = [
   {path:'',component:HomeComponent},
@@ -40,6 +43,13 @@ const routes: Routes = [
   {path:'items',component:ItemsComponent,canActivate:[superUserGuard]},
   {path:'add-item',component:AddItemComponent,canActivate:[superUserGuard]},
   {path:'item/:id',component:ItemDetailsComponent,canActivate:[superUserGuard]},
+  // WhareHouse routes
+  {path:'wharehouses',component:WharehousesComponent,canActivate:[superUserGuard]},
+  {path:'add-wharehouse',component:AddWharehouseComponent,canActivate:[superUserGuard]},
+  {path:'wharehouse/:id',component:WharehouseDetailsComponent,canActivate:[superUserGuard]},
+
+
+
 
 
 

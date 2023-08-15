@@ -34,6 +34,9 @@ import { AddPermissionComponent } from './components/add-permission/add-permissi
 import { ItemDetailsComponent } from './components/item-details/item-details.component';
 import { PermissionDetailsComponent } from './components/permission-details/permission-details.component';
 import { ItemsComponent } from './components/items/items.component';
+import { WharehousesComponent } from './components/wharehouses/wharehouses.component';
+import { AddWharehouseComponent } from './components/add-wharehouse/add-wharehouse.component';
+import { WharehouseDetailsComponent } from './components/wharehouse-details/wharehouse-details.component';
 
 @NgModule({
   declarations: [
@@ -66,7 +69,10 @@ import { ItemsComponent } from './components/items/items.component';
     AddPermissionComponent,
     ItemDetailsComponent,
     PermissionDetailsComponent,
-    ItemsComponent
+    ItemsComponent,
+    WharehousesComponent,
+    AddWharehouseComponent,
+    WharehouseDetailsComponent
   ],
   imports: [
     BrowserModule,
