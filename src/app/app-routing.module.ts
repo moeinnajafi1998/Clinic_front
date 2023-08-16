@@ -36,6 +36,7 @@ import { SickSessionrequestsComponent } from './components/SickFolder/sick-sessi
 import { ClinicSessionrequestsComponent } from './components/Typical_UserFolder/clinic-sessionrequests/clinic-sessionrequests.component';
 import { typicalUserGuard } from './guards/typical-user.guard';
 import { RequestsessionsComponent } from './components/requestsessions/requestsessions.component';
+import { AddMedicalAppointmentComponent } from './components/Typical_UserFolder/add-medical-appointment/add-medical-appointment.component';
 
 const routes: Routes = [
   {path:'',component:HomeComponent},
@@ -79,6 +80,8 @@ const routes: Routes = [
   {path:'sick-sessionrequests',component:SickSessionrequestsComponent,canActivate:[sickGuard]},
   // Typical_User routes
   {path:'clinic-sessionrequests',component:ClinicSessionrequestsComponent,canActivate:[typicalUserGuard]},
+  {path:'add-medicalappointment',component:AddMedicalAppointmentComponent,canActivate:[typicalUserGuard]},
+
 
 
 

@@ -1,0 +1,41 @@
+<main dir="rtl">
+    <div class="form-container">
+      <form>
+        <div class="form-group">
+          <label for="clinic">درمانگاه:</label>
+          <select id="clinic" name="clinic" required>
+            <option *ngFor="let c of clinics" value="{{c.name}}"> {{ c.name }}</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+            <label for="sick">نام بیمار:</label>
+            <input type="text" id="sick" name="sick" required>
+        </div>
+
+        <div class="form-group">
+            <label for="nurse">نام پرستار:</label>
+            <input type="text" id="nurse" name="nurse" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="date">  تاریخ: (YYYY-MM-DD):</label>
+            <input type="text" name="date" id="date" value="1402-01-01">
+        </div>
+
+
+
+        <div class="form-group">
+            <label for="time">زمان:</label>
+            <input type="text" id="time" name="time" value="08:00">
+        </div>
+
+        <div class="form-group">
+            <label for="description">توضیحات :</label>
+            <textarea rows="4" cols="30" id="description" name="description"></textarea>
+        </div>
+        
+        <button (click)="createMedicalAppointment($event)" type="submit">ثبت</button>
+      </form>
+    </div>
+</main>

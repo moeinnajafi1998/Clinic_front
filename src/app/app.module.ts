@@ -40,6 +40,7 @@ import { AddSessionRequestComponent } from './components/SickFolder/add-session-
 import { SickSessionrequestsComponent } from './components/SickFolder/sick-sessionrequests/sick-sessionrequests.component';
 import { ClinicSessionrequestsComponent } from './components/Typical_UserFolder/clinic-sessionrequests/clinic-sessionrequests.component';
 import { RequestsessionsComponent } from './components/requestsessions/requestsessions.component';
+import { AddMedicalAppointmentComponent } from './components/Typical_UserFolder/add-medical-appointment/add-medical-appointment.component';
 
 @NgModule({
   declarations: [
@@ -79,6 +80,7 @@ import { RequestsessionsComponent } from './components/requestsessions/requestse
     SickSessionrequestsComponent,
     ClinicSessionrequestsComponent,
     RequestsessionsComponent,
+    AddMedicalAppointmentComponent,
     
   ],
   imports: [

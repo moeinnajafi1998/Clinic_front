@@ -322,7 +322,13 @@ export class HttpService {
     const result = this.http.patch<SessionReuest>(`http://127.0.0.1:8000/registeration/requestsession-update/${id}/`,{},options)
     return result;
   }
-
+  // medicalappointment APIs
+  createMedicalAppointment(form:FormData){
+    let headers = new HttpHeaders({"Authorization":"token " + localStorage.getItem("token")});
+    let options = {headers:headers}
+    const result = this.http.post<string>('http://127.0.0.1:8000/registeration/medicalappointment-create/',form,options)
+    return result;
+  }
   
   
 }
