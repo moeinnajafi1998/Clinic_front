@@ -41,6 +41,9 @@ import { SickSessionrequestsComponent } from './components/SickFolder/sick-sessi
 import { ClinicSessionrequestsComponent } from './components/Typical_UserFolder/clinic-sessionrequests/clinic-sessionrequests.component';
 import { RequestsessionsComponent } from './components/requestsessions/requestsessions.component';
 import { AddMedicalAppointmentComponent } from './components/Typical_UserFolder/add-medical-appointment/add-medical-appointment.component';
+import { ClinicMedicalappointmentComponent } from './components/Typical_UserFolder/clinic-medicalappointment/clinic-medicalappointment.component';
+import { SickMedicalappointmentsComponent } from './components/SickFolder/sick-medicalappointments/sick-medicalappointments.component';
+import { MedicalappointmentsComponent } from './components/medicalappointments/medicalappointments.component';
 
 @NgModule({
   declarations: [
@@ -81,6 +84,9 @@ import { AddMedicalAppointmentComponent } from './components/Typical_UserFolder/
     ClinicSessionrequestsComponent,
     RequestsessionsComponent,
     AddMedicalAppointmentComponent,
+    ClinicMedicalappointmentComponent,
+    SickMedicalappointmentsComponent,
+    MedicalappointmentsComponent,
     
   ],
   imports: [

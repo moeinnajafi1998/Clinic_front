@@ -44,7 +44,7 @@
             <a [routerLink]="['/add-permission/']" class="dropdown-item">دسترسی جدید</a>
           </div>
         </div>
-
+        <!-- لینک های SuperUser -->
         <div *ngIf="is_superUser"  class="dropdown" >
           <a class="dropdown-toggle" data-bs-toggle="dropdown" style="text-decoration: none; color: #000; margin: 5px;">کاربران</a>
           <div class="dropdown-menu" style="text-align: right;">
@@ -58,37 +58,36 @@
             <a [routerLink]="['/add-user/']" class="dropdown-item"> + کاربر جدید </a>
           </div>
         </div>
-
-
+        <!-- لینک های SuperUser -->
         <div *ngIf="is_superUser"  class="dropdown" >
           <a class="dropdown-toggle" data-bs-toggle="dropdown" style="text-decoration: none; color: #000; margin: 5px;">بیماران</a>
           <div class="dropdown-menu" style="text-align: right;">
             <a [routerLink]="['/sicks/']" class="dropdown-item">  بیماران</a>
             <a [routerLink]="['/requestsessions/']" class="dropdown-item"> تمام درخواست ها</a>
+            <a [routerLink]="['/medicalappointments/']" class="dropdown-item"> تمام نوبت های پزشکی</a>
           </div>
         </div>
-
-
+        <!-- لینک های بیمار -->
         <div *ngIf="user_type=='Sick'"  class="dropdown" >
           <a class="dropdown-toggle" data-bs-toggle="dropdown" style="text-decoration: none; color: #000; margin: 5px;">بخش بیمار</a>
           <div class="dropdown-menu" style="text-align: right;">
             <a [routerLink]="['/add-sessionrequest/']" class="dropdown-item">درخواست نوبت </a>
             <a [routerLink]="['/sick-sessionrequests/']" class="dropdown-item">درخواست های قبلی </a>
+            <a [routerLink]="['/sick-medicalappointments/']" class="dropdown-item">نوبت های پزشکی  </a>
           </div>
         </div>
-
-
+        <!-- لینک های منشی -->
         <div *ngIf="user_type=='Typical_User'"  class="dropdown" >
           <a class="dropdown-toggle" data-bs-toggle="dropdown" style="text-decoration: none; color: #000; margin: 5px;">بخش منشی</a>
           <div class="dropdown-menu" style="text-align: right;">
             <a [routerLink]="['/clinic-sessionrequests/']" class="dropdown-item">درخواست های جلسه درمانگاه </a>
+            <a [routerLink]="['/typical_user-medicalappointments/']" class="dropdown-item">نوبت های پزشکی درمانگاه </a>
             <hr/>
             <a [routerLink]="['/add-medicalappointment/']" class="dropdown-item"> + نوبت ویزیت جدید </a>
 
           </div>
         </div>
-
-
+        <!-- لینک های مدیر درمانگاه -->
         <div *ngIf="user_type=='Clinic_Admin'" class="dropdown">
           <a class="dropdown-toggle" data-bs-toggle="dropdown">مدیر درمانگاه</a>
           <div class="dropdown-menu">

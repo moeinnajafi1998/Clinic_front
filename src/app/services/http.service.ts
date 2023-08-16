@@ -8,6 +8,7 @@ import { PermissionFull } from '../models/Permission';
 import { Item } from '../models/Item';
 import { WhareHouse } from '../models/WhareHouse';
 import { SessionReuest } from '../models/SessionRequest';
+import { MedicalAppointment } from '../models/MedicalAppointment';
 
 @Injectable({
   providedIn: 'root'
@@ -329,6 +330,44 @@ export class HttpService {
     const result = this.http.post<string>('http://127.0.0.1:8000/registeration/medicalappointment-create/',form,options)
     return result;
   }
+
+  medicalAppointmentsForsick(){
+    let headers = new HttpHeaders({"Authorization":"token " + localStorage.getItem("token")});
+    let options = {headers:headers}
+    const result = this.http.get<MedicalAppointment[]>('http://127.0.0.1:8000/registeration/medicalappointmentsforsick/',options)
+    return result;
+  }
+
+  medicalAppointmentsForTypical_User(){
+    let headers = new HttpHeaders({"Authorization":"token " + localStorage.getItem("token")});
+    let options = {headers:headers}
+    const result = this.http.get<MedicalAppointment[]>('http://127.0.0.1:8000/registeration/medicalappointmentsfortypical_user/',options)
+    return result;
+  }
+
+  medicalAppointments(){
+    let headers = new HttpHeaders({"Authorization":"token " + localStorage.getItem("token")});
+    let options = {headers:headers}
+    const result = this.http.get<MedicalAppointment[]>('http://127.0.0.1:8000/registeration/medicalappointments/',options)
+    return result;
+  }
+  
+  changeStatusMedicalAppointment(id:number){
+    let headers = new HttpHeaders({"Authorization":"token " + localStorage.getItem("token")});
+    let options = {headers:headers}
+    const result = this.http.patch<MedicalAppointment>(`http://127.0.0.1:8000/registeration/medicalappointment-update/${id}/`,{},options)
+    return result;
+  }
+
+
+
+
+
+
+
+
+  
+
   
   
 }

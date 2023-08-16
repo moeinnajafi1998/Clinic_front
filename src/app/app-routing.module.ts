@@ -37,6 +37,9 @@ import { ClinicSessionrequestsComponent } from './components/Typical_UserFolder/
 import { typicalUserGuard } from './guards/typical-user.guard';
 import { RequestsessionsComponent } from './components/requestsessions/requestsessions.component';
 import { AddMedicalAppointmentComponent } from './components/Typical_UserFolder/add-medical-appointment/add-medical-appointment.component';
+import { ClinicMedicalappointmentComponent } from './components/Typical_UserFolder/clinic-medicalappointment/clinic-medicalappointment.component';
+import { SickMedicalappointmentsComponent } from './components/SickFolder/sick-medicalappointments/sick-medicalappointments.component';
+import { MedicalappointmentsComponent } from './components/medicalappointments/medicalappointments.component';
 
 const routes: Routes = [
   {path:'',component:HomeComponent},
@@ -71,6 +74,7 @@ const routes: Routes = [
   {path:'sicks',component:SicksComponent,canActivate:[superUserGuard]},
   {path:'warehouse-keepers',component:WarehouseKeepersComponent,canActivate:[superUserGuard]},
   {path:'financial-managers',component:FinancialManagersComponent,canActivate:[superUserGuard]},
+  {path:'medicalappointments',component:MedicalappointmentsComponent,canActivate:[superUserGuard]},
   {path:'add-user',component:AddUserComponent,canActivate:[superUserGuard]},
   {path:'user/:id',component:UserDatailsComponent,canActivate:[superUserGuard]},
   // Other routes
@@ -78,9 +82,12 @@ const routes: Routes = [
   // Sick routes
   {path:'add-sessionrequest',component:AddSessionRequestComponent,canActivate:[sickGuard]},
   {path:'sick-sessionrequests',component:SickSessionrequestsComponent,canActivate:[sickGuard]},
+  {path:'sick-medicalappointments',component:SickMedicalappointmentsComponent,canActivate:[sickGuard]},
   // Typical_User routes
   {path:'clinic-sessionrequests',component:ClinicSessionrequestsComponent,canActivate:[typicalUserGuard]},
   {path:'add-medicalappointment',component:AddMedicalAppointmentComponent,canActivate:[typicalUserGuard]},
+  {path:'typical_user-medicalappointments',component:ClinicMedicalappointmentComponent,canActivate:[typicalUserGuard]},
+
 
 
 

@@ -1,0 +1,65 @@
+<div style="margin: 50px;" class="container-fluid">
+	<div class="row">
+		<div class="col-md-12">
+            <table class="table">
+				<thead>
+					<tr>
+						<th>
+							#
+						</th>
+						<th>
+							نام بیمار
+						</th>
+						<th>
+							درمانگاه
+						</th>
+						<th>
+							منشی
+						</th>
+						<th>
+							توضیحات
+						</th>
+						<th>
+							تاریخ
+						</th>
+						<th>
+							زمان
+						</th>
+                        <th>
+							وضعیت 
+						</th>
+					</tr>
+				</thead>
+				<tbody >
+					<tr *ngFor="let ma of medical_appointments">
+						<td>
+							{{ ma.id }}
+						</td>
+						<td>
+							{{ ma.sick }}
+						</td>
+						<td>
+							{{ ma.clinic }}
+						</td>
+						<td>
+							{{ ma.typical_user }}
+						</td>
+						<td>
+							{{ ma.description }}
+						</td>
+						<td>
+							{{ ma.date }}
+						</td>
+						<td>
+							{{ ma.time }}
+						</td>
+                        <td>
+							<p *ngIf="ma.is_done">✅</p>
+							<p *ngIf="!ma.is_done">❌</p>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>
