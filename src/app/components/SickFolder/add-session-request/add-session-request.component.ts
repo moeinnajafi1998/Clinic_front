@@ -28,7 +28,7 @@ export class AddSessionRequestComponent {
     this.http.createSessionRequest(this.formData).pipe().subscribe(
       res=>{
         alert(JSON.stringify(res));
-        // this.router.navigate(['/ /']);
+        this.router.navigate(['/sick-sessionrequests/']);
       }
     )
 

@@ -32,6 +32,7 @@ import { PermissionDetailsComponent } from './components/permission-details/perm
 import { UserDatailsComponent } from './components/user-datails/user-datails.component';
 import { AddSessionRequestComponent } from './components/SickFolder/add-session-request/add-session-request.component';
 import { sickGuard } from './guards/sick.guard';
+import { SickSessionrequestsComponent } from './components/SickFolder/sick-sessionrequests/sick-sessionrequests.component';
 
 const routes: Routes = [
   {path:'',component:HomeComponent},
@@ -68,8 +69,10 @@ const routes: Routes = [
   {path:'user/:id',component:UserDatailsComponent,canActivate:[superUserGuard]},
   // Other routes
   {path:'report',component:ReportComponent,canActivate:[superUserGuard]},
-  // User routes
+  // Sick routes
   {path:'add-sessionrequest',component:AddSessionRequestComponent,canActivate:[sickGuard]},
+  {path:'sick-sessionrequests',component:SickSessionrequestsComponent,canActivate:[sickGuard]},
+
 
 
   

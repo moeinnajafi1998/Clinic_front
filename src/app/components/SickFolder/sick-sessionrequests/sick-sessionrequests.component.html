@@ -1,1 +1,47 @@
-<p>sick-sessionrequests works!</p>
+<div style="margin: 50px;" class="container-fluid">
+	<div class="row">
+		<div class="col-md-12">
+            <table class="table">
+				<thead>
+					<tr>
+						<th>
+							#
+						</th>
+						<th>
+							نام بیمار
+						</th>
+						<th>
+							درمانگاه
+						</th>
+						<th>
+							توضیحات
+						</th>
+                        <th>
+							وضعیت
+						</th>
+					</tr>
+				</thead>
+				<tbody >
+					<tr *ngFor="let s of sessions">
+						<td>
+							{{ s.id }}
+						</td>
+						<td>
+							{{ s.sick }}
+						</td>
+						<td>
+							{{ s.clinic }}
+						</td>
+						<td>
+							{{ s.description }}
+						</td>
+                        <td>
+							<p *ngIf="s.is_checked">✅</p>
+							<p *ngIf="!s.is_checked">❌</p>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>

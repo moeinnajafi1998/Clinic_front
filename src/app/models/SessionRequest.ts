@@ -3,4 +3,5 @@ export interface SessionReuest{
     sick : string;
     clinic : string;
     description : string;
+    is_checked : boolean;
 }

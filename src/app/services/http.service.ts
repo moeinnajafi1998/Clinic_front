@@ -294,5 +294,15 @@ export class HttpService {
     const result = this.http.post<string>('http://127.0.0.1:8000/registeration/requestsession-create/',form,options)
     return result;
   }
+
+  requestsessionsforsick(){
+    let headers = new HttpHeaders({"Authorization":"token " + localStorage.getItem("token")});
+    let options = {headers:headers}
+    const result = this.http.get<SessionReuest[]>('http://127.0.0.1:8000/registeration/requestsessionsforsick/',options)
+    return result;
+  }
+
+
+  
   
 }
