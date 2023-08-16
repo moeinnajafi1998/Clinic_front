@@ -291,7 +291,7 @@ export class HttpService {
   createSessionRequest(form:FormData){
     let headers = new HttpHeaders({"Authorization":"token " + localStorage.getItem("token")});
     let options = {headers:headers}
-    const result = this.http.post<SessionReuest>('http://127.0.0.1:8000/registeration/requestsession-create/',form,options)
+    const result = this.http.post<string>('http://127.0.0.1:8000/registeration/requestsession-create/',form,options)
     return result;
   }
   

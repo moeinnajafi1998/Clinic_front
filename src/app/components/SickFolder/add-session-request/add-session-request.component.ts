@@ -23,7 +23,6 @@ export class AddSessionRequestComponent {
 
   createSessionRequest(e:Event){
     e.preventDefault();
-    this.formData.append('sick',$('#name').val());
     this.formData.append('clinic',$('#clinic').val());
     this.formData.append('description',$('#description').val());
     this.http.createSessionRequest(this.formData).pipe().subscribe(
