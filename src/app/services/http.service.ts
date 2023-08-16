@@ -302,6 +302,26 @@ export class HttpService {
     return result;
   }
 
+  requestsessionsForTypical_user(){
+    let headers = new HttpHeaders({"Authorization":"token " + localStorage.getItem("token")});
+    let options = {headers:headers}
+    const result = this.http.get<SessionReuest[]>('http://127.0.0.1:8000/registeration/requestsessionsforTypical_user/',options)
+    return result;
+  }
+
+  requestsessions(){
+    let headers = new HttpHeaders({"Authorization":"token " + localStorage.getItem("token")});
+    let options = {headers:headers}
+    const result = this.http.get<SessionReuest[]>('http://127.0.0.1:8000/registeration/requestsessions/',options)
+    return result;
+  }
+
+  changeStatusrequestsession(id:number){
+    let headers = new HttpHeaders({"Authorization":"token " + localStorage.getItem("token")});
+    let options = {headers:headers}
+    const result = this.http.patch<SessionReuest>(`http://127.0.0.1:8000/registeration/requestsession-update/${id}/`,{},options)
+    return result;
+  }
 
   
   

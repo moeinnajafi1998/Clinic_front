@@ -52,11 +52,19 @@
             <a [routerLink]="['/clinic-admins/']" class="dropdown-item"> مدیران درمانگاه ها</a>
             <a [routerLink]="['/typical-users/']" class="dropdown-item"> منشی ها</a>
             <a [routerLink]="['/nurses/']" class="dropdown-item"> پرستار ها</a>
-            <a [routerLink]="['/sicks/']" class="dropdown-item">  بیماران</a>
             <a [routerLink]="['/warehouse-keepers/']" class="dropdown-item">  انباردار ها</a>
             <a [routerLink]="['/financial-managers/']" class="dropdown-item">  مدیران مالی</a>
             <hr/>
             <a [routerLink]="['/add-user/']" class="dropdown-item"> + کاربر جدید </a>
+          </div>
+        </div>
+
+
+        <div *ngIf="is_superUser"  class="dropdown" >
+          <a class="dropdown-toggle" data-bs-toggle="dropdown" style="text-decoration: none; color: #000; margin: 5px;">بیماران</a>
+          <div class="dropdown-menu" style="text-align: right;">
+            <a [routerLink]="['/sicks/']" class="dropdown-item">  بیماران</a>
+            <a [routerLink]="['/requestsessions/']" class="dropdown-item"> تمام درخواست ها</a>
           </div>
         </div>
 
@@ -66,6 +74,14 @@
           <div class="dropdown-menu" style="text-align: right;">
             <a [routerLink]="['/add-sessionrequest/']" class="dropdown-item">درخواست نوبت </a>
             <a [routerLink]="['/sick-sessionrequests/']" class="dropdown-item">درخواست های قبلی </a>
+          </div>
+        </div>
+
+
+        <div *ngIf="user_type=='Typical_User'"  class="dropdown" >
+          <a class="dropdown-toggle" data-bs-toggle="dropdown" style="text-decoration: none; color: #000; margin: 5px;">بخش منشی</a>
+          <div class="dropdown-menu" style="text-align: right;">
+            <a [routerLink]="['/clinic-sessionrequests/']" class="dropdown-item">درخواست های درمانگاه </a>
           </div>
         </div>
 

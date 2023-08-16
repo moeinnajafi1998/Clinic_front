@@ -38,6 +38,8 @@ import { WharehouseDetailsComponent } from './components/wharehouse-details/whar
 import { UserDatailsComponent } from './components/user-datails/user-datails.component';
 import { AddSessionRequestComponent } from './components/SickFolder/add-session-request/add-session-request.component';
 import { SickSessionrequestsComponent } from './components/SickFolder/sick-sessionrequests/sick-sessionrequests.component';
+import { ClinicSessionrequestsComponent } from './components/Typical_UserFolder/clinic-sessionrequests/clinic-sessionrequests.component';
+import { RequestsessionsComponent } from './components/requestsessions/requestsessions.component';
 
 @NgModule({
   declarations: [
@@ -75,6 +77,8 @@ import { SickSessionrequestsComponent } from './components/SickFolder/sick-sessi
     UserDatailsComponent,
     AddSessionRequestComponent,
     SickSessionrequestsComponent,
+    ClinicSessionrequestsComponent,
+    RequestsessionsComponent,
     
   ],
   imports: [

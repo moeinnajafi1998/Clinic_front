@@ -33,6 +33,9 @@ import { UserDatailsComponent } from './components/user-datails/user-datails.com
 import { AddSessionRequestComponent } from './components/SickFolder/add-session-request/add-session-request.component';
 import { sickGuard } from './guards/sick.guard';
 import { SickSessionrequestsComponent } from './components/SickFolder/sick-sessionrequests/sick-sessionrequests.component';
+import { ClinicSessionrequestsComponent } from './components/Typical_UserFolder/clinic-sessionrequests/clinic-sessionrequests.component';
+import { typicalUserGuard } from './guards/typical-user.guard';
+import { RequestsessionsComponent } from './components/requestsessions/requestsessions.component';
 
 const routes: Routes = [
   {path:'',component:HomeComponent},
@@ -57,6 +60,8 @@ const routes: Routes = [
   {path:'permissions',component:PermissionsComponent,canActivate:[superUserGuard]},
   {path:'add-permission',component:AddPermissionComponent,canActivate:[superUserGuard]},
   {path:'permission/:id',component:PermissionDetailsComponent,canActivate:[superUserGuard]},
+  // RequestSession routes
+  {path:'requestsessions',component:RequestsessionsComponent,canActivate:[superUserGuard]},
   // User routes
   {path:'users',component:UsersComponent,canActivate:[superUserGuard]},
   {path:'clinic-admins',component:ClinicAdminsComponent,canActivate:[superUserGuard]},
@@ -72,6 +77,8 @@ const routes: Routes = [
   // Sick routes
   {path:'add-sessionrequest',component:AddSessionRequestComponent,canActivate:[sickGuard]},
   {path:'sick-sessionrequests',component:SickSessionrequestsComponent,canActivate:[sickGuard]},
+  // Typical_User routes
+  {path:'clinic-sessionrequests',component:ClinicSessionrequestsComponent,canActivate:[typicalUserGuard]},
 
 
 
