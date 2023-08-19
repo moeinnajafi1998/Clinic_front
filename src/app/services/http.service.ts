@@ -453,13 +453,11 @@ export class HttpService {
     return result;
   }
 
+  VisitAppointments(){
+    let headers = new HttpHeaders({"Authorization":"token " + localStorage.getItem("token")});
+    let options = {headers:headers}
+    const result = this.http.get<VisitAppointment[]>('http://127.0.0.1:8000/registeration/visitappointments/',options)
+    return result;
+  }
 
-
-
-
-
-  
-
-  
-  
 }
