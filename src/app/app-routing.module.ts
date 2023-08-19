@@ -42,6 +42,8 @@ import { SickMedicalappointmentsComponent } from './components/SickFolder/sick-m
 import { MedicalappointmentsComponent } from './components/medicalappointments/medicalappointments.component';
 import { AddRequestGoodComponent } from './components/Typical_UserFolder/add-request-good/add-request-good.component';
 import { ClinicRequestgoodsComponent } from './components/Typical_UserFolder/clinic-requestgoods/clinic-requestgoods.component';
+import { RequestgoodsComponent } from './components/requestgoods/requestgoods.component';
+import { SuperUserAndWhareHouseKeeper } from './guards/SuperUserAndWhareHouseKeeper.guard';
 
 const routes: Routes = [
   {path:'',component:HomeComponent},
@@ -91,7 +93,8 @@ const routes: Routes = [
   {path:'add-medicalappointment',component:AddMedicalAppointmentComponent,canActivate:[typicalUserGuard]},
   {path:'typical_user-medicalappointments',component:ClinicMedicalappointmentComponent,canActivate:[typicalUserGuard]},
   {path:'add-requestgood',component:AddRequestGoodComponent,canActivate:[typicalUserGuard]},
-
+  // common between SuperUser and WhareHouseKeeper
+  {path:'requestgoods',component:RequestgoodsComponent,canActivate:[SuperUserAndWhareHouseKeeper]},
 
 
 

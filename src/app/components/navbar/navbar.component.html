@@ -65,6 +65,7 @@
             <a [routerLink]="['/sicks/']" class="dropdown-item">  بیماران</a>
             <a [routerLink]="['/requestsessions/']" class="dropdown-item"> تمام درخواست ها</a>
             <a [routerLink]="['/medicalappointments/']" class="dropdown-item"> تمام نوبت های پزشکی</a>
+            <a [routerLink]="['/requestgoods/']" class="dropdown-item"> تمام درخواست های منابع</a>
           </div>
         </div>
         <!-- لینک های بیمار -->
@@ -96,7 +97,15 @@
               <a [routerLink]="['/']" class="dropdown-item"> انبار </a>
           </div>
         </div>
-          
+
+        <!-- لینک های انباردار  -->
+        <div *ngIf="user_type=='Warehouse_Keeper'"  class="dropdown" >
+          <a class="dropdown-toggle" data-bs-toggle="dropdown" style="text-decoration: none; color: #000; margin: 5px;">بیماران</a>
+          <div class="dropdown-menu" style="text-align: right;">
+            <a [routerLink]="['/requestgoods/']" class="dropdown-item"> تمام درخواست های منابع</a>
+          </div>
+        </div>
+        
         <button *ngIf="!isLoggedIn" style="margin-right: auto;" [routerLink]="['/login/']" class="btn btn-info">ورود به سامانه</button>
         <button *ngIf="isLoggedIn" style="margin-right: auto;" (click)="logOut()" class="btn btn-danger">خروج </button>
 

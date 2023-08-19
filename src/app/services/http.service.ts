@@ -388,7 +388,7 @@ export class HttpService {
     return result;
   }
   
-  changeIs_DoneMedicalAppointment(id:number){
+  changeIs_DoneRequestGoods(id:number){
     let headers = new HttpHeaders({"Authorization":"token " + localStorage.getItem("token")});
     let options = {headers:headers}
     const result = this.http.patch<RequestGood>(`http://127.0.0.1:8000/registeration/requestgood-update/${id}/`,{},options)

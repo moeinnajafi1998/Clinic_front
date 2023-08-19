@@ -47,10 +47,10 @@
 						<td>
 							{{ rq.description }}
 						</td>
-						<td>
-							<p *ngIf="rq.is_done">✅</p>
-							<p *ngIf="!rq.is_done">❌</p>
-						</td>
+                        <td (click)="changeStatus(rq.id)">
+                            <p *ngIf="rq.is_done">✅</p>
+                            <p *ngIf="!rq.is_done">❌</p>
+                        </td>
 					</tr>
 				</tbody>
 			</table>
