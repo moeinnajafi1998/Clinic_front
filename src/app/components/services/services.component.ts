@@ -17,8 +17,8 @@ export class ServicesComponent {
     })
   }
 
-  // serviceDetails(id:number){
-  //   this.router.navigate([`/service/${id}`]);
-  // }
+  serviceDetails(id:number){
+    this.router.navigate([`/service/${id}`]);
+  }
 
 }
