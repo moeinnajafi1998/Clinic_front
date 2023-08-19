@@ -45,6 +45,8 @@ import { ClinicRequestgoodsComponent } from './components/Typical_UserFolder/cli
 import { RequestgoodsComponent } from './components/requestgoods/requestgoods.component';
 import { SuperUserAndWhareHouseKeeper } from './guards/SuperUserAndWhareHouseKeeper.guard';
 import { ServicesComponent } from './components/services/services.component';
+import { AddServicesComponent } from './components/add-services/add-services.component';
+import { ServiceDetailsComponent } from './components/service-details/service-details.component';
 
 const routes: Routes = [
   {path:'',component:HomeComponent},
@@ -63,8 +65,8 @@ const routes: Routes = [
   {path:'item/:id',component:ItemDetailsComponent,canActivate:[superUserGuard]},
   // Service routes
   {path:'services',component:ServicesComponent,canActivate:[superUserGuard]},
-  // {path:'add-service',component:AddService,canActivate:[superUserGuard]},
-  // {path:'service/:id',component:ServiceDetail,canActivate:[superUserGuard]},
+  {path:'add-service',component:AddServicesComponent,canActivate:[superUserGuard]},
+  {path:'service/:id',component:ServiceDetailsComponent,canActivate:[superUserGuard]},
   // WhareHouse routes
   {path:'wharehouses',component:WharehousesComponent,canActivate:[superUserGuard]},
   {path:'add-wharehouse',component:AddWharehouseComponent,canActivate:[superUserGuard]},
