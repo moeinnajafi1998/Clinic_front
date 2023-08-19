@@ -430,7 +430,13 @@ export class HttpService {
     const result = this.http.patch<RequestGood>(`http://127.0.0.1:8000/registeration/requestgood-update/${id}/`,{},options)
     return result;
   }
-
+  // VisitAppointment APIs
+  createVisitAppointment(form:FormData){
+    let headers = new HttpHeaders({"Authorization":"token " + localStorage.getItem("token")});
+    let options = {headers:headers}
+    const result = this.http.post<string>('http://127.0.0.1:8000/registeration/visitappointment-create/',form,options)
+    return result;
+  }
 
 
 
