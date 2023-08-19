@@ -103,7 +103,6 @@ const routes: Routes = [
   // Typical_User routes
   {path:'clinic-sessionrequests',component:ClinicSessionrequestsComponent,canActivate:[typicalUserGuard]},
   {path:'clinic-requestgoods',component:ClinicRequestgoodsComponent,canActivate:[typicalUserGuard]},
-  {path:'clinic-requestgoods',component:ClinicRequestgoodsComponent,canActivate:[typicalUserGuard]},
   {path:'clinic-visitappointment',component:ClinicVisitAppointmentsComponent,canActivate:[typicalUserGuard]},
   {path:'typical_user-medicalappointments',component:ClinicMedicalappointmentComponent,canActivate:[typicalUserGuard]},
   {path:'add-requestgood',component:AddRequestGoodComponent,canActivate:[typicalUserGuard]},
