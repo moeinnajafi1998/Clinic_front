@@ -6,3 +6,7 @@ export interface Item{
     category : string;
     wharehouse : string;
 }
+
+export interface Item2{
+    name : string;
+}

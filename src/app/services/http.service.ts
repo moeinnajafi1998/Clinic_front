@@ -5,10 +5,11 @@ import { Token } from '../models/Token';
 import { Clinic } from '../models/Clinic';
 import { Category } from '../models/Category';
 import { PermissionFull } from '../models/Permission';
-import { Item } from '../models/Item';
+import { Item, Item2 } from '../models/Item';
 import { WhareHouse } from '../models/WhareHouse';
 import { SessionReuest } from '../models/SessionRequest';
 import { MedicalAppointment } from '../models/MedicalAppointment';
+import { RequestGood } from '../models/RequestGood';
 
 @Injectable({
   providedIn: 'root'
@@ -92,6 +93,13 @@ export class HttpService {
     let headers = new HttpHeaders({"Authorization":"token " + localStorage.getItem("token")});
     let options = {headers:headers}
     const result = this.http.get<Item[]>('http://127.0.0.1:8000/management/items/',options)
+    return result;
+  }
+
+  itemsNames(){
+    let headers = new HttpHeaders({"Authorization":"token " + localStorage.getItem("token")});
+    let options = {headers:headers}
+    const result = this.http.get<Item2[]>('http://127.0.0.1:8000/management/itemsNames/',options)
     return result;
   }
 
@@ -358,8 +366,34 @@ export class HttpService {
     const result = this.http.patch<MedicalAppointment>(`http://127.0.0.1:8000/registeration/medicalappointment-update/${id}/`,{},options)
     return result;
   }
+  // RequestGoods APIs
+  createRequestGood(form:FormData){
+    let headers = new HttpHeaders({"Authorization":"token " + localStorage.getItem("token")});
+    let options = {headers:headers}
+    const result = this.http.post<string>('http://127.0.0.1:8000/registeration/requestgood-create/',form,options)
+    return result;
+  }
 
+  RequestGoodForTypical_User(){
+    let headers = new HttpHeaders({"Authorization":"token " + localStorage.getItem("token")});
+    let options = {headers:headers}
+    const result = this.http.get<RequestGood[]>('http://127.0.0.1:8000/registeration/requestgoodsfortypical_user/',options)
+    return result;
+  }
 
+  RequestGoods(){
+    let headers = new HttpHeaders({"Authorization":"token " + localStorage.getItem("token")});
+    let options = {headers:headers}
+    const result = this.http.get<RequestGood[]>('http://127.0.0.1:8000/registeration/requestgoods/',options)
+    return result;
+  }
+  
+  changeIs_DoneMedicalAppointment(id:number){
+    let headers = new HttpHeaders({"Authorization":"token " + localStorage.getItem("token")});
+    let options = {headers:headers}
+    const result = this.http.patch<RequestGood>(`http://127.0.0.1:8000/registeration/requestgood-update/${id}/`,{},options)
+    return result;
+  }
 
 
 

@@ -44,6 +44,7 @@ import { AddMedicalAppointmentComponent } from './components/Typical_UserFolder/
 import { ClinicMedicalappointmentComponent } from './components/Typical_UserFolder/clinic-medicalappointment/clinic-medicalappointment.component';
 import { SickMedicalappointmentsComponent } from './components/SickFolder/sick-medicalappointments/sick-medicalappointments.component';
 import { MedicalappointmentsComponent } from './components/medicalappointments/medicalappointments.component';
+import { AddRequestGoodComponent } from './components/Typical_UserFolder/add-request-good/add-request-good.component';
 
 @NgModule({
   declarations: [
@@ -87,6 +88,7 @@ import { MedicalappointmentsComponent } from './components/medicalappointments/m
     ClinicMedicalappointmentComponent,
     SickMedicalappointmentsComponent,
     MedicalappointmentsComponent,
+    AddRequestGoodComponent,
     
   ],
   imports: [
