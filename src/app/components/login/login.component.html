@@ -7,7 +7,7 @@
       </div>
       <h2>ورود به پنل کاربری</h2>
       <input id="username" type="text" placeholder="نام کاربری">
-      <input id="password" type="password" placeholder="رمز عبور">
+      <input id="password" type="password" placeholder="رمز عبور" (keyup.enter)="login($event)">
       <button class="btn btn-sgi" type="submit" (click)="login($event)">ورود</button>
     </div>
 </div>
