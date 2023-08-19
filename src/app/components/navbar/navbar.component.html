@@ -65,17 +65,18 @@
             <a [routerLink]="['/sicks/']" class="dropdown-item">  بیماران</a>
             <a [routerLink]="['/requestsessions/']" class="dropdown-item"> تمام درخواست ها</a>
             <a [routerLink]="['/medicalappointments/']" class="dropdown-item"> تمام نوبت های پزشکی</a>
+            <a [routerLink]="['/visitappointments/']" class="dropdown-item">تمام نوبت های ویزیت   </a>
           </div>
         </div>
-                <!-- لینک های SuperUser -->
-                <div *ngIf="is_superUser"  class="dropdown" >
-                  <a class="dropdown-toggle" data-bs-toggle="dropdown" style="text-decoration: none; color: #000; margin: 5px;">درمانگاه ها</a>
-                  <div class="dropdown-menu" style="text-align: right;">
-                    <a [routerLink]="['/clinics/']" class="dropdown-item">درمانگاه ها</a>
-                    <a [routerLink]="['/add-clinic/']" class="dropdown-item">درمانگاه جدید</a>
-                    <hr/>
-                    <a [routerLink]="['/requestgoods/']" class="dropdown-item"> تمام درخواست های منابع</a>
-                  </div>
+        <!-- لینک های SuperUser -->
+        <div *ngIf="is_superUser"  class="dropdown" >
+          <a class="dropdown-toggle" data-bs-toggle="dropdown" style="text-decoration: none; color: #000; margin: 5px;">درمانگاه ها</a>
+          <div class="dropdown-menu" style="text-align: right;">
+            <a [routerLink]="['/clinics/']" class="dropdown-item">درمانگاه ها</a>
+            <a [routerLink]="['/add-clinic/']" class="dropdown-item">درمانگاه جدید</a>
+            <hr/>
+            <a [routerLink]="['/requestgoods/']" class="dropdown-item"> تمام درخواست های منابع</a>
+          </div>
         </div>
         <!-- لینک های بیمار -->
         <div *ngIf="user_type=='Sick'"  class="dropdown" >
@@ -93,6 +94,7 @@
             <a [routerLink]="['/clinic-sessionrequests/']" class="dropdown-item">درخواست های جلسه درمانگاه </a>
             <a [routerLink]="['/typical_user-medicalappointments/']" class="dropdown-item">نوبت های پزشکی درمانگاه </a>
             <a [routerLink]="['/clinic-requestgoods/']" class="dropdown-item">درخواست های منابع درمانگاه </a>
+            <a [routerLink]="['/clinic-visitappointment/']" class="dropdown-item">نوبت های ویزیت درمانگاه </a>
             <hr/>
             <a [routerLink]="['/add-medicalappointment/']" class="dropdown-item"> + نوبت ویزیت جدید </a>
             <a [routerLink]="['/add-requestgood/']" class="dropdown-item"> +  درخواست منابع جدید </a>
@@ -112,6 +114,15 @@
           <a class="dropdown-toggle" data-bs-toggle="dropdown" style="text-decoration: none; color: #000; margin: 5px;">انباردار</a>
           <div class="dropdown-menu" style="text-align: right;">
             <a [routerLink]="['/requestgoods/']" class="dropdown-item"> تمام درخواست های منابع</a>
+          </div>
+        </div>
+
+        <!-- لینک های پرستار  -->
+        <div *ngIf="user_type=='Nurse'"  class="dropdown" >
+          <a class="dropdown-toggle" data-bs-toggle="dropdown" style="text-decoration: none; color: #000; margin: 5px;">پرستار</a>
+          <div class="dropdown-menu" style="text-align: right;">
+            <a [routerLink]="['/add-visitappointment/']" class="dropdown-item"> نوبت ویزیت جدید</a>
+            <a [routerLink]="['/nurse-visitappointments/']" class="dropdown-item"> ویزیت های قبلی</a>
           </div>
         </div>
         

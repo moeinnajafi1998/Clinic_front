@@ -50,6 +50,10 @@ import { RequestgoodsComponent } from './components/requestgoods/requestgoods.co
 import { ServicesComponent } from './components/services/services.component';
 import { AddServicesComponent } from './components/add-services/add-services.component';
 import { ServiceDetailsComponent } from './components/service-details/service-details.component';
+import { AddVisitAppointmentComponent } from './components/NurseFolder/add-visit-appointment/add-visit-appointment.component';
+import { NurseVisitAppointmentComponent } from './components/NurseFolder/nurse-visit-appointment/nurse-visit-appointment.component';
+import { VisitAppointmentComponent } from './components/visit-appointment/visit-appointment.component';
+import { ClinicVisitAppointmentsComponent } from './components/Typical_UserFolder/clinic-visit-appointments/clinic-visit-appointments.component';
 
 @NgModule({
   declarations: [
@@ -99,6 +103,10 @@ import { ServiceDetailsComponent } from './components/service-details/service-de
     ServicesComponent,
     AddServicesComponent,
     ServiceDetailsComponent,
+    AddVisitAppointmentComponent,
+    NurseVisitAppointmentComponent,
+    VisitAppointmentComponent,
+    ClinicVisitAppointmentsComponent,
     
   ],
   imports: [

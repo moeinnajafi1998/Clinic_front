@@ -47,6 +47,11 @@ import { SuperUserAndWhareHouseKeeper } from './guards/SuperUserAndWhareHouseKee
 import { ServicesComponent } from './components/services/services.component';
 import { AddServicesComponent } from './components/add-services/add-services.component';
 import { ServiceDetailsComponent } from './components/service-details/service-details.component';
+import { AddVisitAppointmentComponent } from './components/NurseFolder/add-visit-appointment/add-visit-appointment.component';
+import { nurseGuard } from './guards/nurse.guard';
+import { NurseVisitAppointmentComponent } from './components/NurseFolder/nurse-visit-appointment/nurse-visit-appointment.component';
+import { VisitAppointmentComponent } from './components/visit-appointment/visit-appointment.component';
+import { ClinicVisitAppointmentsComponent } from './components/Typical_UserFolder/clinic-visit-appointments/clinic-visit-appointments.component';
 
 const routes: Routes = [
   {path:'',component:HomeComponent},
@@ -86,6 +91,7 @@ const routes: Routes = [
   {path:'warehouse-keepers',component:WarehouseKeepersComponent,canActivate:[superUserGuard]},
   {path:'financial-managers',component:FinancialManagersComponent,canActivate:[superUserGuard]},
   {path:'medicalappointments',component:MedicalappointmentsComponent,canActivate:[superUserGuard]},
+  {path:'visitappointments',component:VisitAppointmentComponent,canActivate:[superUserGuard]},
   {path:'add-user',component:AddUserComponent,canActivate:[superUserGuard]},
   {path:'user/:id',component:UserDatailsComponent,canActivate:[superUserGuard]},
   // Other routes
@@ -97,9 +103,13 @@ const routes: Routes = [
   // Typical_User routes
   {path:'clinic-sessionrequests',component:ClinicSessionrequestsComponent,canActivate:[typicalUserGuard]},
   {path:'clinic-requestgoods',component:ClinicRequestgoodsComponent,canActivate:[typicalUserGuard]},
-  {path:'add-medicalappointment',component:AddMedicalAppointmentComponent,canActivate:[typicalUserGuard]},
+  {path:'clinic-visitappointment',component:ClinicVisitAppointmentsComponent,canActivate:[typicalUserGuard]},
   {path:'typical_user-medicalappointments',component:ClinicMedicalappointmentComponent,canActivate:[typicalUserGuard]},
   {path:'add-requestgood',component:AddRequestGoodComponent,canActivate:[typicalUserGuard]},
+  // Nurse routes
+  {path:'add-visitappointment',component:AddVisitAppointmentComponent,canActivate:[nurseGuard]},
+  {path:'nurse-visitappointments',component:NurseVisitAppointmentComponent,canActivate:[nurseGuard]},
+
   // common between SuperUser and WhareHouseKeeper
   {path:'requestgoods',component:RequestgoodsComponent,canActivate:[SuperUserAndWhareHouseKeeper]},
 
