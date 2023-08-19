@@ -50,6 +50,7 @@ import { RequestgoodsComponent } from './components/requestgoods/requestgoods.co
 import { ServicesComponent } from './components/services/services.component';
 import { AddServicesComponent } from './components/add-services/add-services.component';
 import { ServiceDetailsComponent } from './components/service-details/service-details.component';
+import { AddVisitAppointmentComponent } from './components/NurseFolder/add-visit-appointment/add-visit-appointment.component';
 
 @NgModule({
   declarations: [
@@ -99,6 +100,7 @@ import { ServiceDetailsComponent } from './components/service-details/service-de
     ServicesComponent,
     AddServicesComponent,
     ServiceDetailsComponent,
+    AddVisitAppointmentComponent,
     
   ],
   imports: [
