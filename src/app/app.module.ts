@@ -48,6 +48,7 @@ import { AddRequestGoodComponent } from './components/Typical_UserFolder/add-req
 import { ClinicRequestgoodsComponent } from './components/Typical_UserFolder/clinic-requestgoods/clinic-requestgoods.component';
 import { RequestgoodsComponent } from './components/requestgoods/requestgoods.component';
 import { ServicesComponent } from './components/services/services.component';
+import { AddServicesComponent } from './components/add-services/add-services.component';
 
 @NgModule({
   declarations: [
@@ -95,6 +96,7 @@ import { ServicesComponent } from './components/services/services.component';
     ClinicRequestgoodsComponent,
     RequestgoodsComponent,
     ServicesComponent,
+    AddServicesComponent,
     
   ],
   imports: [
