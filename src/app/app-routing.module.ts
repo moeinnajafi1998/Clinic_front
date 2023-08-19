@@ -41,6 +41,7 @@ import { ClinicMedicalappointmentComponent } from './components/Typical_UserFold
 import { SickMedicalappointmentsComponent } from './components/SickFolder/sick-medicalappointments/sick-medicalappointments.component';
 import { MedicalappointmentsComponent } from './components/medicalappointments/medicalappointments.component';
 import { AddRequestGoodComponent } from './components/Typical_UserFolder/add-request-good/add-request-good.component';
+import { ClinicRequestgoodsComponent } from './components/Typical_UserFolder/clinic-requestgoods/clinic-requestgoods.component';
 
 const routes: Routes = [
   {path:'',component:HomeComponent},
@@ -86,6 +87,7 @@ const routes: Routes = [
   {path:'sick-medicalappointments',component:SickMedicalappointmentsComponent,canActivate:[sickGuard]},
   // Typical_User routes
   {path:'clinic-sessionrequests',component:ClinicSessionrequestsComponent,canActivate:[typicalUserGuard]},
+  {path:'clinic-requestgoods',component:ClinicRequestgoodsComponent,canActivate:[typicalUserGuard]},
   {path:'add-medicalappointment',component:AddMedicalAppointmentComponent,canActivate:[typicalUserGuard]},
   {path:'typical_user-medicalappointments',component:ClinicMedicalappointmentComponent,canActivate:[typicalUserGuard]},
   {path:'add-requestgood',component:AddRequestGoodComponent,canActivate:[typicalUserGuard]},

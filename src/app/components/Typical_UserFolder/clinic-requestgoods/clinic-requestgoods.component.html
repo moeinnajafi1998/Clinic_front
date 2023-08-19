@@ -1,0 +1,57 @@
+<div style="margin: 50px;" class="container-fluid">
+	<div class="row">
+		<div class="col-md-12">
+            <table class="table">
+				<thead>
+					<tr>
+						<th>
+							#
+						</th>
+						<th>
+							نام آیتم
+						</th>
+						<th>
+							تعداد درخواست
+						</th>
+						<th>
+							درمانگاه 
+						</th>
+						<th>
+							منشی
+						</th>
+						<th>
+							توضیحات
+						</th>
+                        <th>
+							 وضعیت 
+						</th>
+					</tr>
+				</thead>
+				<tbody >
+					<tr *ngFor="let rq of requestGoods">
+						<td>
+							{{ rq.id }}
+						</td>
+						<td>
+							{{ rq.item }}
+						</td>
+						<td>
+							{{ rq.number }}
+						</td>
+						<td>
+							{{ rq.clinic }}
+						</td>
+						<td>
+							{{ rq.typical_user }}
+						</td>
+						<td>
+							{{ rq.description }}
+						</td>
+						<p *ngIf="rq.is_done">✅</p>
+						<p *ngIf="!rq.is_done">❌</p>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>
