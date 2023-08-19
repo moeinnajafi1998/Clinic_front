@@ -1,1 +1,57 @@
-<p>add-visit-appointment works!</p>
+<main dir="rtl">
+    <div class="form-container">
+      <form>
+        <div class="form-group">
+          <label for="sick">نام بیمار:</label>
+          <input type="text" id="sick" name="sick" required>
+        </div>
+
+        <div class="form-group">
+            <label for="clinic">نام درمانگاه:</label>
+            <input type="text" id="clinic" name="clinic" required>
+        </div>
+        
+        <div class="form-group">
+            <label for="description">توضیحات:</label>
+            <input type="text" id="description" name="description" required>
+        </div>
+
+        <ng-select  
+            #MyNgSelect            
+            bindLabel="name"
+            placeholder="Select item"
+            appendTo="body"
+            [multiple]="true"
+            [searchable]="true" 
+            [clearable]="true"
+            [closeOnSelect]="false"
+            [(ngModel)]="selected_items"
+            name="selected_items"
+            >
+            <ng-option [value]="item.id"  *ngFor="let item of items">
+                {{item.name}}
+            </ng-option>
+        </ng-select>
+
+         
+        <ng-select  
+            #MyNgSelect            
+            bindLabel="name"
+            placeholder="Select service"
+            appendTo="body"
+            [multiple]="true"
+            [searchable]="true" 
+            [clearable]="true"
+            [closeOnSelect]="false"
+            [(ngModel)]="selected_services"
+            name="selected_services"
+            >
+            <ng-option [value]="s.id"  *ngFor="let s of services">
+                {{s.name}}
+            </ng-option>
+        </ng-select>
+
+        <button (click)="addVisitAppointment($event)" type="submit">تایید</button>
+      </form>
+    </div>
+</main>
