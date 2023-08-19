@@ -1,1 +1,17 @@
-<p>add-services works!</p>
+<main dir="rtl">
+    <div class="form-container">
+      <form>
+        <div class="form-group">
+          <label for="name">نام سرویس:</label>
+          <input type="text" id="name" name="name" required>
+        </div>
+        
+        <div class="form-group">
+          <label for="description">توضیحات:</label>
+          <input type="text" id="description" name="description">
+        </div>
+        
+        <button (click)="createService($event)" type="submit">تایید</button>
+      </form>
+    </div>
+</main>
