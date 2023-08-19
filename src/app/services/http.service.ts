@@ -98,6 +98,13 @@ export class HttpService {
     return result;
   }
 
+  itemsdistinct(){
+    let headers = new HttpHeaders({"Authorization":"token " + localStorage.getItem("token")});
+    let options = {headers:headers}
+    const result = this.http.get<Item[]>('http://127.0.0.1:8000/management/items-distinct/',options)
+    return result;
+  }
+
   itemsNames(){
     let headers = new HttpHeaders({"Authorization":"token " + localStorage.getItem("token")});
     let options = {headers:headers}
