@@ -11,6 +11,7 @@ import { SessionReuest } from '../models/SessionRequest';
 import { MedicalAppointment } from '../models/MedicalAppointment';
 import { RequestGood } from '../models/RequestGood';
 import { Service } from '../models/Service';
+import { VisitAppointment } from '../models/VisitAppointment';
 
 @Injectable({
   providedIn: 'root'
@@ -437,6 +438,15 @@ export class HttpService {
     const result = this.http.post<string>('http://127.0.0.1:8000/registeration/visitappointment-create/',form,options)
     return result;
   }
+  
+  VisitAppointmentForTypical_User(){
+    let headers = new HttpHeaders({"Authorization":"token " + localStorage.getItem("token")});
+    let options = {headers:headers}
+    const result = this.http.get<VisitAppointment[]>('http://127.0.0.1:8000/registeration/requestgoodsfortypical_user/',options)
+    return result;
+  }
+
+
 
 
 
