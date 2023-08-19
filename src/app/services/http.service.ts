@@ -10,6 +10,7 @@ import { WhareHouse } from '../models/WhareHouse';
 import { SessionReuest } from '../models/SessionRequest';
 import { MedicalAppointment } from '../models/MedicalAppointment';
 import { RequestGood } from '../models/RequestGood';
+import { Service } from '../models/Service';
 
 @Injectable({
   providedIn: 'root'
@@ -128,6 +129,41 @@ export class HttpService {
     let headers = new HttpHeaders({"Authorization":"token " + localStorage.getItem("token")});
     let options = {headers:headers}
     const result = this.http.delete(`http://127.0.0.1:8000/management/item-delete/${id}/`,options)
+    return result;
+  }
+  // Services APIs
+  services(){
+    let headers = new HttpHeaders({"Authorization":"token " + localStorage.getItem("token")});
+    let options = {headers:headers}
+    const result = this.http.get<Service[]>('http://127.0.0.1:8000/management/services/',options)
+    return result;
+  }
+
+  createService(form:FormData){
+    let headers = new HttpHeaders({"Authorization":"token " + localStorage.getItem("token")});
+    let options = {headers:headers}
+    const result = this.http.post<Service>('http://127.0.0.1:8000/management/service-create/',form,options)
+    return result;
+  }
+
+  retrieveService(id:number){
+    let headers = new HttpHeaders({"Authorization":"token " + localStorage.getItem("token")});
+    let options = {headers:headers}
+    const result = this.http.get<Service>(`http://127.0.0.1:8000/management/service-retrieve/${id}/`,options)
+    return result;
+  }
+
+  updateService(form:FormData,id:number){
+    let headers = new HttpHeaders({"Authorization":"token " + localStorage.getItem("token")});
+    let options = {headers:headers}
+    const result = this.http.patch<Service>(`http://127.0.0.1:8000/management/service-update/${id}/`,form,options)
+    return result;
+  }
+
+  deleteService(id:number){
+    let headers = new HttpHeaders({"Authorization":"token " + localStorage.getItem("token")});
+    let options = {headers:headers}
+    const result = this.http.delete(`http://127.0.0.1:8000/management/service-delete/${id}/`,options)
     return result;
   }
   // WhareHouse APIs
