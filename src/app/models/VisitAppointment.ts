@@ -1,3 +1,6 @@
+import { Item } from "./Item";
+import { Service } from "./Service";
+
 export interface VisitAppointment{
     id : number;
     nurse : string;
@@ -5,6 +8,6 @@ export interface VisitAppointment{
     clinic : string;
     typical_user : string;
     description : string;
-    used_items : number[];
-    services : number[];
+    used_items : Item[];
+    services : Service[];
 }
