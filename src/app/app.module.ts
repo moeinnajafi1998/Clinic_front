@@ -52,6 +52,8 @@ import { AddServicesComponent } from './components/add-services/add-services.com
 import { ServiceDetailsComponent } from './components/service-details/service-details.component';
 import { AddVisitAppointmentComponent } from './components/NurseFolder/add-visit-appointment/add-visit-appointment.component';
 import { NurseVisitAppointmentComponent } from './components/NurseFolder/nurse-visit-appointment/nurse-visit-appointment.component';
+import { VisitAppointmentComponent } from './components/visit-appointment/visit-appointment.component';
+import { ClinicVisitAppointmentsComponent } from './components/Typical_UserFolder/clinic-visit-appointments/clinic-visit-appointments.component';
 
 @NgModule({
   declarations: [
@@ -103,6 +105,8 @@ import { NurseVisitAppointmentComponent } from './components/NurseFolder/nurse-v
     ServiceDetailsComponent,
     AddVisitAppointmentComponent,
     NurseVisitAppointmentComponent,
+    VisitAppointmentComponent,
+    ClinicVisitAppointmentsComponent,
     
   ],
   imports: [
