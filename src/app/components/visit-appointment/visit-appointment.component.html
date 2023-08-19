@@ -1,1 +1,64 @@
-<p>visit-appointment works!</p>
+<div style="margin: 50px;" class="container-fluid">
+	<div class="row">
+		<div class="col-md-12">
+            <table class="table">
+				<thead>
+					<tr>
+						<th>
+							#
+						</th>
+						<th>
+							نام پرستار
+						</th>
+						<th>
+							نام بیمار
+						</th>
+						<th>
+							درمانگاه
+						</th>
+						<th>
+							منشی
+						</th>
+						<th>
+							توضیحات
+						</th>
+						<th>
+							آیتم های مصرفی
+						</th>
+                        <th>
+							خدمات 
+						</th>
+					</tr>
+				</thead>
+				<tbody >
+					<tr *ngFor="let va of visit_appointments">
+						<td>
+							{{ va.id }}
+						</td>
+						<td>
+							{{ va.nurse }}
+						</td>
+						<td>
+							{{ va.sick }}
+						</td>
+						<td>
+							{{ va.clinic }}
+						</td>
+						<td>
+							{{ va.typical_user }}
+						</td>
+						<td>
+							{{ va.description }}
+						</td>
+						<td>
+                            <p  *ngFor="let u of va.used_items">{{ u.name }} </p>
+						</td>
+						<td >
+							<p *ngFor="let s of va.services"> {{ s.name }}</p>
+						</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>

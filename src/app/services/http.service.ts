@@ -442,7 +442,7 @@ export class HttpService {
   VisitAppointmentForTypical_User(){
     let headers = new HttpHeaders({"Authorization":"token " + localStorage.getItem("token")});
     let options = {headers:headers}
-    const result = this.http.get<VisitAppointment[]>('http://127.0.0.1:8000/registeration/requestgoodsfortypical_user/',options)
+    const result = this.http.get<VisitAppointment[]>('http://127.0.0.1:8000/registeration/visitappointmentsfortypical_user/',options)
     return result;
   }
 
