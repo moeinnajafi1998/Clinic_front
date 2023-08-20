@@ -44,6 +44,7 @@ export class LoginComponent {
       localStorage.setItem('token',res.token);
       this.recogUser.setLogIn();
       this.recogUser.user();
+      this.router.navigate(['/'])
       Swal.fire({
         position: 'top-end',
         icon: 'success',
@@ -51,7 +52,6 @@ export class LoginComponent {
         showConfirmButton: false,
         timer: 1000
       })
-      this.router.navigate(['/'])
     })
   }
 
