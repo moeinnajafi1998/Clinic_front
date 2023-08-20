@@ -44,6 +44,13 @@ export class LoginComponent {
       localStorage.setItem('token',res.token);
       this.recogUser.setLogIn();
       this.recogUser.user();
+      Swal.fire({
+        position: 'top-end',
+        icon: 'success',
+        title: 'خوش آمدید!',
+        showConfirmButton: false,
+        timer: 1000
+      })
       this.router.navigate(['/'])
     })
   }
