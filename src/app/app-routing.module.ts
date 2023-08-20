@@ -104,8 +104,10 @@ const routes: Routes = [
   {path:'clinic-sessionrequests',component:ClinicSessionrequestsComponent,canActivate:[typicalUserGuard]},
   {path:'clinic-requestgoods',component:ClinicRequestgoodsComponent,canActivate:[typicalUserGuard]},
   {path:'clinic-visitappointment',component:ClinicVisitAppointmentsComponent,canActivate:[typicalUserGuard]},
-  {path:'typical_user-medicalappointments',component:ClinicMedicalappointmentComponent,canActivate:[typicalUserGuard]},
+  {path:'clinic-medicalappointments',component:ClinicMedicalappointmentComponent,canActivate:[typicalUserGuard]},
   {path:'add-requestgood',component:AddRequestGoodComponent,canActivate:[typicalUserGuard]},
+  {path:'add-medicalappointment',component:AddMedicalAppointmentComponent,canActivate:[typicalUserGuard]},
+
   // Nurse routes
   {path:'add-visitappointment',component:AddVisitAppointmentComponent,canActivate:[nurseGuard]},
   {path:'nurse-visitappointments',component:NurseVisitAppointmentComponent,canActivate:[nurseGuard]},

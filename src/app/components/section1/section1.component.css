@@ -27,4 +27,5 @@
 
 h2 ,p{
   animation: colorChange 5s linear infinite; 
+  font-size: medium;
 }
