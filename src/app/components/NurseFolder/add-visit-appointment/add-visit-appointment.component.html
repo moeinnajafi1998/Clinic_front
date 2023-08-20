@@ -7,8 +7,10 @@
         </div>
 
         <div class="form-group">
-            <label for="clinic">نام درمانگاه:</label>
-            <input type="text" id="clinic" name="clinic" required>
+            <label for="clinic">درمانگاه:</label>
+            <select id="clinic" name="clinic" required>
+              <option *ngFor="let c of clinics" value="{{c.name}}"> {{ c.name }}</option>
+            </select>
         </div>
         
         <div class="form-group">

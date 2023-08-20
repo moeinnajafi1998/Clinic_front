@@ -21,7 +21,7 @@ export class AddRequestGoodComponent {
       this.clinics = res;
     });
 
-    this.http.itemsNames().pipe().subscribe(res=>{
+    this.http.itemsdistinct().pipe().subscribe(res=>{
       this.items = res;
     });
   }

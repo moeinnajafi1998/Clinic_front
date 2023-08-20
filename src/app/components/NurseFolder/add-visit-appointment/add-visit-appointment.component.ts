@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import { Clinic } from 'src/app/models/Clinic';
 import { Item } from 'src/app/models/Item';
 import { Service } from 'src/app/models/Service';
 import { HttpService } from 'src/app/services/http.service';
@@ -17,7 +18,7 @@ export class AddVisitAppointmentComponent {
   services : Service[] = [];
   selected_items = [];
   selected_services = [];
-
+  clinics : Clinic[] = [];
 
   ngOnInit(){
     this.http.itemsdistinct().pipe().subscribe(res=>{
@@ -26,6 +27,10 @@ export class AddVisitAppointmentComponent {
 
     this.http.services().pipe().subscribe(res=>{
       this.services = res;
+    })
+
+    this.http.clinics().pipe().subscribe(res=>{
+      this.clinics = res;
     })
   }
 
